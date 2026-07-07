@@ -1,0 +1,7 @@
+- name: Install hardware pkgs
+  kewlfft.aur.aur:
+    name:
+      - libva
+      - intel-media-driver
+      - libva-utils
+    state: present

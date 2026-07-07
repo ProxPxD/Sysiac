@@ -1,0 +1,6 @@
+- name: Install common pkgs
+  kewlfft.aur.aur:
+    name:
+      - jq
+      - yq
+    state: present

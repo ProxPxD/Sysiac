@@ -1,0 +1,4 @@
+git_username: '{{username}}'
+obsi_repo: Obsidian
+obsi_username: '{{username}}'
+obsi_dir: '{{doc_dir}}/Obsidian/{{obsi_username}}'
