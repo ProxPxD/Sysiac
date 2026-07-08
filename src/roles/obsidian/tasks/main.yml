@@ -14,4 +14,5 @@
     dest: '{{obsi_dir}}'
     key_file: '{{git_ssh_key}}'
     accept_hostkey: true
+  become: true
   become_user: '{{linux_user}}'

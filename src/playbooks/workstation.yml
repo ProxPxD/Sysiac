@@ -4,6 +4,6 @@
   connection: local
   become: true
   roles:
-    #- hardware
-    #- common
+    - hardware
+    - common
     - obsidian
