@@ -8,20 +8,3 @@
   become: true
   tags:
     - sudoers
-
-- name: Install common pkgs
-  kewlfft.aur.aur:
-    name:
-      - jq
-      - yq
-      - viu
-      - fzf
-      - cheat
-      - zip
-      - lsof
-    state: present
-  become: true
-  become_user: '{{linux_user}}'
-  tags:
-    - install
-    - common

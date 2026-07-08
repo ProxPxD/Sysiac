@@ -3,8 +3,9 @@
 - name: Workstation
   hosts: localhost
   connection: local
-  become: true
   roles:
+    - setup
     - hardware
     - common
+    - firefox
     - obsidian
