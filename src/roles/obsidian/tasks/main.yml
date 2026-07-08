@@ -7,8 +7,11 @@
     path: '{{obsi_dir}}'
     state: directory
     mode: "0755"
-    
+
 - name: Clone repo
   git:
     repo: 'git@github.com:{{git_username}}/{{obsi_repo}}.git'
     dest: '{{obsi_dir}}'
+    key_file: '{{git_ssh_key}}'
+    accept_hostkey: true
+  become_user: '{{linux_user}}'
