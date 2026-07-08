@@ -1,6 +1,7 @@
 ---
 
-- hosts: localhost
+- name: Workstation
+  hosts: localhost
   connection: local
   become: true
   roles:
