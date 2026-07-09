@@ -3,3 +3,5 @@
     src: kglobalshortcutsrc
     dest: '{{ user_dir }}/.config/kglobalshortcutsrc'
     mode: '0644'
+  tags:
+    - shortcuts

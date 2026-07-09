@@ -13,4 +13,5 @@
   become_user: '{{linux_user}}'
   tags:
     - install
-    - common
+    - terminal
+    - tool

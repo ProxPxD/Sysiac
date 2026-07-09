@@ -37,6 +37,7 @@
 - name: Set Firefox as default browser
   command:
     cmd: xdg-settings set default-web-browser firefox.desktop
+  changed_when: false
   tags:
     - firefox
     - conf
