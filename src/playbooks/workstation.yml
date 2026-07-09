@@ -5,9 +5,12 @@
   connection: local
   roles:
     - setup
+    # Core/Common
     - hardware
-    - common
+    - terminal-tools
+    # Linux UI
     - virtual-desktops
     - shortcuts
+    # Apps
     - firefox
     - obsidian

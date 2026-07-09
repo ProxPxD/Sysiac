@@ -1,0 +1,7 @@
+- name: Virtual Desktops
+  import_role:
+    name: virtual_desktops
+
+- name: Shortcuts
+  import_role:
+    name: shortcuts
