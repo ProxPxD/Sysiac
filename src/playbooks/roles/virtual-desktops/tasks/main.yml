@@ -1,0 +1,95 @@
+- name: 'Make 9 virtual desktops in 3x3 grid'
+  shell: |
+    kwriteconfig6 --file ~/.config/kwinrc \
+      --group Desktops \
+      --key Number 9
+    kwriteconfig6 --file ~/.config/kwinrc \
+      --group Desktops \
+      --key Rows 3
+  changed_when: false
+  tags:
+    - virtual-desktops
+    - conf
+
+- name: 'Name virtual desktops'
+  shell: |
+    kwriteconfig6 --file ~/.config/kwinrc \
+    --group Desktops \
+    --key Name_1 ┌
+
+    kwriteconfig6 --file ~/.config/kwinrc \
+      --group Desktops \
+      --key Name_2 ┬
+
+    kwriteconfig6 --file ~/.config/kwinrc \
+      --group  Desktops \
+      --key Name_3 ┐
+
+    kwriteconfig6 --file ~/.config/kwinrc \
+      --group Desktops \
+      --key Name_4 ├
+
+    kwriteconfig6 --file ~/.config/kwinrc \
+      --group Desktops \
+      --key Name_5 ┼
+
+    kwriteconfig6 --file ~/.config/kwinrc \
+      --group Desktops \
+      --key Name_6 ┤
+
+    kwriteconfig6 --file ~/.config/kwinrc \
+      --group Desktops \
+      --key Name_7 └
+
+    kwriteconfig6 --file ~/.config/kwinrc \
+      --group Desktops \
+      --key Name_8 ┴
+
+    kwriteconfig6 --file ~/.config/kwinrc \
+      --group Desktops \
+      --key Name_9 ┘
+  changed_when: false
+  tags:
+    - virtual-desktops
+    - conf
+
+- name: 'Turn wrapping arround on for virtual desktops'
+  shell: |
+    kwriteconfig6 --file ~/.config/kwinrc \
+      --group Windows \
+      --key RollOverDesktops true
+  changed_when: false
+  tags:
+    - virtual-desktops
+    - conf
+
+- name: 'Set virtual desktop name display time'
+  shell: |
+    kwriteconfig6 --file ~/.config/kwinrc \
+      --group Plugins \
+      --key desktopchangeosdEnabled true
+
+    kwriteconfig6 --file ~/.config/kwinrc \
+      --group Script-desktopchangeosd \
+      --key PopupHideDelay 500
+  changed_when: false
+  tags:
+    - virtual-desktops
+    - conf
+
+- name: Disable desktop layout indicator
+  shell: |
+    kwriteconfig6 --file ~/.config/kwinrc \
+      --group Script-desktopchangeosd \
+      --key TextOnly true
+  changed_when: false
+  tags:
+    - virtual-desktops
+    - conf
+
+- name: Reconfigure virtual desktops
+  command: qdbus6 org.kde.KWin /KWin org.kde.KWin.reconfigure
+  changed_when: false
+  tags:
+    - virtual-desktops
+    - conf
