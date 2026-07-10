@@ -6,3 +6,13 @@
   tags:
     - kosole
     - profile
+
+- name: Set default Konsole profile
+  ini_file:
+    path: '{{user_dir}}/.config/konsolerc'
+    section: Desktop Entry
+    option: DefaultProfile
+    value: '{{username}}.profile'
+  tags:
+    - kosole
+    - profile
