@@ -97,6 +97,8 @@
       --transient=Yes
   args:
     executable: fish
+  changed_when: false
+  when
   tags:
     - shell
     - fish
