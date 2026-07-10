@@ -1,6 +1,6 @@
 username: ProxPxD
 linux_user: '{{username | lower}}'
-user_dir: '/home/{{linux_user}}'
+user_dir: '/home/{{linux_user}}/'
 doc_dir: '{{user_dir}}/Documents'
 
 git_username: '{{username}}'

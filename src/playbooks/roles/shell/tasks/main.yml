@@ -1,0 +1,102 @@
+- name: Install Fish Shell
+  kewlfft.aur.aur:
+    name: fish
+    state: present
+  tags:
+    - shell
+    - fish
+    - install
+
+- name: Establish Config
+  copy:
+    src: config.fish
+    dest: '{{ user_dir }}/.config/fish/config.fish'
+    mode: '0644'
+  tags:
+    - shell
+    - fish
+    - establish
+    - move
+
+- name: Add fish to valid shells
+  lineinfile:
+    path: /etc/shells
+    line: /usr/bin/fish
+    state: present
+  become: true
+  tags:
+    - shell
+    - fish
+    - establish
+
+- name: Set fish as default shell
+  user:
+    name: '{{ linux_user }}'
+    shell: /usr/bin/fish
+  become: true
+  tags:
+    - shell
+    - fish
+    - establish
+
+- name: Check if Fisher Exists
+  stat:
+    path: ~/.config/fish/functions/fisher.fish
+  register: fisher
+  tags:
+    - shell
+    - fish
+    - check
+  failed_when: false
+  changed_when: false
+
+- name: Establish Fisher extension  # noqa: command-instead-of-module
+  shell: |
+    curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
+    fisher install jorgebucaran/fisher
+  args:
+    executable: fish
+  when: not fisher.stat.exists
+  tags:
+    - shell
+    - fish
+    - establish
+
+- name: Check if Tide exists
+  command: fish -c 'type -q tide'
+  register: is_tide
+  failed_when: false
+  changed_when: false
+  tags:
+    - shell
+    - fish
+    - check
+
+- name: Install Tide
+  command: fish -c 'fisher install IlanCosman/tide@v6'
+  when: is_tide.rc != 0
+  tags:
+    - shell
+    - fish
+    - install
+
+- name: Configure Tide
+  shell: |
+    tide configure --auto \
+      --style=Rainbow \
+      --prompt_colors='True color' \
+      --show_time=No \
+      --rainbow_prompt_separators=Angled \
+      --powerline_prompt_heads=Slanted \
+      --powerline_prompt_tails=Flat \
+      --powerline_prompt_style='Two lines, character' \
+      --prompt_connection=Disconnected \
+      --powerline_right_prompt_frame=No \
+      --prompt_spacing=Compact \
+      --icons='Many icons' \
+      --transient=Yes
+  args:
+    executable: fish
+  tags:
+    - shell
+    - fish

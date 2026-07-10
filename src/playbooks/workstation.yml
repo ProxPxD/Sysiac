@@ -8,6 +8,7 @@
     # Core/Common
     - hardware
     - terminal-tools
+    - shell
     # Linux UI
     - virtual-desktops
     - shortcuts
