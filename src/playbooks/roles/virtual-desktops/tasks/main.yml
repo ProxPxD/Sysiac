@@ -15,19 +15,19 @@
   shell: |
     kwriteconfig6 --file ~/.config/kwinrc \
     --group Desktops \
-    --key Name_1 ┌
+    --key Name_1 ┘
 
     kwriteconfig6 --file ~/.config/kwinrc \
       --group Desktops \
-      --key Name_2 ┬
+      --key Name_2 ┴
 
     kwriteconfig6 --file ~/.config/kwinrc \
       --group  Desktops \
-      --key Name_3 ┐
+      --key Name_3 └
 
     kwriteconfig6 --file ~/.config/kwinrc \
       --group Desktops \
-      --key Name_4 ├
+      --key Name_4 ┤
 
     kwriteconfig6 --file ~/.config/kwinrc \
       --group Desktops \
@@ -35,19 +35,19 @@
 
     kwriteconfig6 --file ~/.config/kwinrc \
       --group Desktops \
-      --key Name_6 ┤
+      --key Name_6 ├
 
     kwriteconfig6 --file ~/.config/kwinrc \
       --group Desktops \
-      --key Name_7 └
+      --key Name_7 ┐
 
     kwriteconfig6 --file ~/.config/kwinrc \
       --group Desktops \
-      --key Name_8 ┴
+      --key Name_8 ┬
 
     kwriteconfig6 --file ~/.config/kwinrc \
       --group Desktops \
-      --key Name_9 ┘
+      --key Name_9 ┌
   changed_when: false
   tags:
     - virtual-desktops
