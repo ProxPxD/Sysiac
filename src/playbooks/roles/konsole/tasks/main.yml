@@ -4,7 +4,7 @@
     dest: '{{user_dir}}/.local/share/konsole/{{username}}.profile'
     mode: '0644'
   tags:
-    - kosole
+    - konsole
     - profile
 
 - name: Set default Konsole profile
@@ -14,5 +14,5 @@
     option: DefaultProfile
     value: '{{username}}.profile'
   tags:
-    - kosole
+    - konsole
     - profile
