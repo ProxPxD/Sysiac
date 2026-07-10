@@ -1,0 +1,5 @@
+- name: Configure Konsole profile
+  template:
+    src: profile.j2
+    dest: '{{user_dir}}/.local/share/konsole/{{username}}.profile'
+    mode: '0644'
