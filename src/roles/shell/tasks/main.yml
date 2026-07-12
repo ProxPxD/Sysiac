@@ -10,7 +10,7 @@
 - name: Establish Config
   copy:
     src: config.fish
-    dest: '{{ user_dir }}/.config/fish/config.fish'
+    dest: '{{ user_path }}/.config/fish/config.fish'
     mode: '0644'
   tags:
     - shell
@@ -50,7 +50,7 @@
   failed_when: false
   changed_when: false
 
-- name: Establish Fisher extension  # noqa: command-instead-of-module
+- name: Establish Fisher extension # noqa: command-instead-of-module
   shell: |
     curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
     fisher install jorgebucaran/fisher

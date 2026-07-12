@@ -10,7 +10,7 @@
 
 - name: Create obsidian dir(s)
   file:
-    path: '{{obsi_dir}}'
+    path: '{{obsi_path}}'
     state: directory
     mode: "0755"
   tags:
@@ -19,17 +19,23 @@
 
 - name: Check if obsidian repo already exists
   stat:
-    path: '{{ obsi_dir }}/.git'
+    path: '{{obsi_path}}/.git'
   register: obsi_git
   failed_when: false
   changed_when: false
+  tags:
+    - obsidian
 
 - name: Clone repo
   git:
     repo: 'git@github.com:{{git_username}}/{{obsi_repo}}.git'
-    dest: '{{obsi_dir}}'
+    dest: '{{obsi_path}}'
     key_file: '{{git_ssh_key}}'
     accept_hostkey: true
-  become: false
+  become: true
   become_user: '{{linux_user}}'
   when: not obsi_git.stat.exists
+  tags:
+    - obsidian
+    - git
+    - clone

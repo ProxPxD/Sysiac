@@ -1,7 +1,9 @@
 username: ProxPxD
 linux_user: '{{username | lower}}'
-user_dir: '/home/{{linux_user}}/'
-doc_dir: '{{user_dir}}/Documents'
+user_path: '/home/{{linux_user}}/'
+doc_path: '{{user_path}}/Documents'
+desktop_path: '{{user_path}}/Desktop'
+
 
 git_username: '{{username}}'
-git_ssh_key: '{{user_dir}}/.ssh/id_ed25519'
+git_ssh_key: '{{user_path}}/.ssh/id_ed25519'

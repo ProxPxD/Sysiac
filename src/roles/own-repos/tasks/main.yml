@@ -1,0 +1,31 @@
+- name: Create Dir
+  file:
+    path: '{{prog_path}}'
+    state: directory
+    mode: '0755'
+  tags:
+    - own-repos
+
+- name: 'Create Symlinks'
+  file:
+    src: '{{prog_path}}'
+    dest: '{{user_path}}/{{ item }}/{{prog_dir}}'
+    state: link
+  loop:
+    - Desktop
+    - Documents
+  tags:
+    - own-repos
+
+- name: 'Git Clone'
+  include_tasks: clone-repo.yml
+  loop:
+    - ScrapLang
+    - Orgen
+    - LangCode
+    - Sysiac
+    - TestCore
+  loop_control:
+    loop_var: repo
+  tags:
+    - own-repos

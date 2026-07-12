@@ -1,3 +1,3 @@
 obsi_repo: Obsidian
 obsi_username: '{{username}}'
-obsi_dir: '{{doc_dir}}/Obsidian/{{obsi_username}}'
+obsi_path: '{{doc_path}}/{{obsi_repo}}/{{obsi_username}}'
