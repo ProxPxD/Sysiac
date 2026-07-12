@@ -6,3 +6,8 @@ confs:
   bat:
     files:
       - config
+templates:  # ?
+  git:
+    dir: '{{user_path}}'
+    files:
+      - '.gitconfig'

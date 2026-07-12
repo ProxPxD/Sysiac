@@ -13,6 +13,7 @@
 
       - lsd
       - bat
+      - git
 
       - libreoffice-still
       - gimp
@@ -29,3 +30,6 @@
   loop_control:
     loop_var: app
   loop: "{{confs | dict2items(key_name='name', value_name='conf')}}"
+  tags:
+    - conf
+    - simple-apps

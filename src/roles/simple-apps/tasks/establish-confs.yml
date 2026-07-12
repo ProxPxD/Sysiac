@@ -1,14 +1,20 @@
 - name: establish-confs | Set Facts
   set_fact:
     curr_conf_dir: '{{ app.dir | default([conf_path, app.name] | path_join)}}'
+  tags:
+    - simple-apps
+    - conf
 
 - name: establish-confs | Create Dir
   file:
     path: '{{curr_conf_dir}}'
     state: directory
     mode: '0755'
+  tags:
+    - simple-apps
+    - conf
 
-- name: establish-confs | Copy File
+- name: establish-confs | Copy Confs
   copy:
     src: '{{app.name}}/{{file}}'
     dest: '{{curr_conf_dir}}/{{file}}'
@@ -16,3 +22,6 @@
   loop_control:
     loop_var: file
   loop: '{{app.conf.files}}'
+  tags:
+    - simple-apps
+    - conf

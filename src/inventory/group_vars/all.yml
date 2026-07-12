@@ -1,4 +1,6 @@
 username: ProxPxD
+email: piotr10tutek@poczta.onet.pl
+
 linux_user: '{{username | lower}}'
 user_path: '/home/{{linux_user}}'
 doc_path: '{{user_path}}/Documents'
