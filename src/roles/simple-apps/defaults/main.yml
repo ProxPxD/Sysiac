@@ -1,0 +1,8 @@
+confs:
+  lsd:
+    files:
+      - config.yaml
+      - icons.yaml
+  bat:
+    files:
+      - config

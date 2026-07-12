@@ -1,0 +1,18 @@
+- name: establish-confs | Set Facts
+  set_fact:
+    curr_conf_dir: '{{ app.dir | default([conf_path, app.name] | path_join)}}'
+
+- name: establish-confs | Create Dir
+  file:
+    path: '{{curr_conf_dir}}'
+    state: directory
+    mode: '0755'
+
+- name: establish-confs | Copy File
+  copy:
+    src: '{{app.name}}/{{file}}'
+    dest: '{{curr_conf_dir}}/{{file}}'
+    mode: '0644'
+  loop_control:
+    loop_var: file
+  loop: '{{app.conf.files}}'

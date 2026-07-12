@@ -1,0 +1,31 @@
+- name: Install Apps
+  kewlfft.aur.aur:
+    name:
+      - viu
+      - fzf
+      - cheat
+      - zip
+      - lsof
+      - gzip
+      - gtop
+      - gping
+      - fd
+
+      - lsd
+      - bat
+
+      - libreoffice-still
+      - gimp
+      - gparted
+    state: present
+  become: true
+  become_user: '{{linux_user}}'
+  tags:
+    - install
+    - simple-apps
+
+- name: Create App Confs
+  include_tasks: establish-confs.yml
+  loop_control:
+    loop_var: app
+  loop: "{{confs | dict2items(key_name='name', value_name='conf')}}"

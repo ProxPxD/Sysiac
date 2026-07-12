@@ -1,0 +1,6 @@
+- name: Install Fonts
+  kewlfft.aur.aur:
+    name:
+      - jq
+      - yq
+      - curl

@@ -1,8 +1,9 @@
 username: ProxPxD
 linux_user: '{{username | lower}}'
-user_path: '/home/{{linux_user}}/'
+user_path: '/home/{{linux_user}}'
 doc_path: '{{user_path}}/Documents'
 desktop_path: '{{user_path}}/Desktop'
+conf_path: '{{user_path}}/.config'
 
 
 git_username: '{{username}}'
