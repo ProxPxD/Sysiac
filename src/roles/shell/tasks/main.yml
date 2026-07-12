@@ -10,7 +10,7 @@
 - name: Establish Config
   copy:
     src: config.fish
-    dest: '{{ user_path }}/.config/fish/config.fish'
+    dest: '{{user_path}}/.config/fish/config.fish'
     mode: '0644'
   tags:
     - shell

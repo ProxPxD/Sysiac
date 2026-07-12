@@ -9,7 +9,6 @@
   changed_when: false
   tags:
     - virtual-desktops
-    - conf
 
 - name: 'Name virtual desktops'
   shell: |
@@ -51,7 +50,6 @@
   changed_when: false
   tags:
     - virtual-desktops
-    - conf
 
 - name: 'Turn wrapping arround on for virtual desktops'
   shell: |
@@ -61,7 +59,6 @@
   changed_when: false
   tags:
     - virtual-desktops
-    - conf
 
 - name: 'Set virtual desktop name display time'
   shell: |
@@ -75,7 +72,6 @@
   changed_when: false
   tags:
     - virtual-desktops
-    - conf
 
 - name: Disable desktop layout indicator
   shell: |
@@ -85,11 +81,9 @@
   changed_when: false
   tags:
     - virtual-desktops
-    - conf
 
 - name: Reconfigure virtual desktops
   command: qdbus6 org.kde.KWin /KWin org.kde.KWin.reconfigure
   changed_when: false
   tags:
     - virtual-desktops
-    - conf

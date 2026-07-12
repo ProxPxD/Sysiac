@@ -15,7 +15,6 @@
     mode: "0755"
   tags:
     - obsidian
-    - conf
 
 - name: Check if obsidian repo already exists
   stat:
