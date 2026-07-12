@@ -1,0 +1,10 @@
+- name: Install Fonts
+  kewlfft.aur.aur:
+    name:
+      - nerd-fonts
+    state: present
+  become: true
+  become_user: '{{linux_user}}'
+  tags:
+    - install
+    - fonts

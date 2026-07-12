@@ -1,2 +1,2 @@
-prog_dir: Programs-bis
+prog_dir: Programs
 prog_path: '{{user_path}}/{{prog_dir}}/'

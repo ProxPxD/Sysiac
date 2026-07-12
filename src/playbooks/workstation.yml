@@ -1,4 +1,3 @@
----
 
 - name: Workstation
   hosts: localhost
@@ -8,6 +7,7 @@
     # Core/Common
     - hardware
     - terminal-tools
+    - fonts
     - konsole
     - shell
     # Linux UI
