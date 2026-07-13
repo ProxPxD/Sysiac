@@ -15,7 +15,7 @@
     - conf
 
 - name: establish-confs | Copy Confs
-  copy:
+  template:
     src: '{{app.name}}/{{file}}'
     dest: '{{curr_conf_dir}}/{{file}}'
     mode: '0644'
