@@ -1,6 +1,6 @@
 - name: establish-confs | Set Facts
   set_fact:
-    curr_conf_dir: '{{ app.dir | default([conf_path, app.name] | path_join)}}'
+    curr_conf_dir: '{{ app.conf.dir | default([conf_path, app.name] | path_join)}}'
   tags:
     - simple-apps
     - conf
