@@ -7,4 +7,5 @@
     validate: 'visudo -cf %s'
   become: true
   tags:
+    - setup
     - sudoers

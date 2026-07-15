@@ -10,3 +10,7 @@ confs:
     dir: '{{user_path}}'
     files:
       - '.gitconfig'
+  ssh:
+    dir: '{{user_path}}/.ssh'
+    files:
+      - 'config'
