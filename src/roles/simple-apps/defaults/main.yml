@@ -14,3 +14,7 @@ confs:
     dir: '{{user_path}}/.ssh'
     files:
       - 'config'
+  vim:
+    dir: '{{user_path}}'
+    files:
+      - .vimrc
