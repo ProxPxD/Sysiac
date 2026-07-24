@@ -1,9 +1,9 @@
 - name: 'Make 9 virtual desktops in 3x3 grid'
   shell: |
-    kwriteconfig6 --file ~/.config/kwinrc \
+    kwriteconfig6 --file {{kwinrc_path}} \
       --group Desktops \
       --key Number 9
-    kwriteconfig6 --file ~/.config/kwinrc \
+    kwriteconfig6 --file {{kwinrc_path}} \
       --group Desktops \
       --key Rows 3
   changed_when: false
@@ -12,48 +12,48 @@
 
 - name: 'Name virtual desktops'
   shell: |
-    kwriteconfig6 --file ~/.config/kwinrc \
+    kwriteconfig6 --file {{kwinrc_path}} \
     --group Desktops \
-    --key Name_1 ┘
+    --key Name1 ┛
 
-    kwriteconfig6 --file ~/.config/kwinrc \
+    kwriteconfig6 --file {{kwinrc_path}} \
       --group Desktops \
-      --key Name_2 ┴
+      --key Name2 ┻
 
-    kwriteconfig6 --file ~/.config/kwinrc \
+    kwriteconfig6 --file {{kwinrc_path}} \
       --group  Desktops \
-      --key Name_3 └
+      --key Name3 ┗
 
-    kwriteconfig6 --file ~/.config/kwinrc \
+    kwriteconfig6 --file {{kwinrc_path}} \
       --group Desktops \
-      --key Name_4 ┤
+      --key Name4 ┫
 
-    kwriteconfig6 --file ~/.config/kwinrc \
+    kwriteconfig6 --file {{kwinrc_path}} \
       --group Desktops \
-      --key Name_5 ┼
+      --key Name5 ╋
 
-    kwriteconfig6 --file ~/.config/kwinrc \
+    kwriteconfig6 --file {{kwinrc_path}} \
       --group Desktops \
-      --key Name_6 ├
+      --key Name6 ┣
 
-    kwriteconfig6 --file ~/.config/kwinrc \
+    kwriteconfig6 --file {{kwinrc_path}} \
       --group Desktops \
-      --key Name_7 ┐
+      --key Name7 ┓
 
-    kwriteconfig6 --file ~/.config/kwinrc \
+    kwriteconfig6 --file {{kwinrc_path}} \
       --group Desktops \
-      --key Name_8 ┬
+      --key Name8 ┳
 
-    kwriteconfig6 --file ~/.config/kwinrc \
+    kwriteconfig6 --file {{kwinrc_path}} \
       --group Desktops \
-      --key Name_9 ┌
+      --key Name_9 ┏
   changed_when: false
   tags:
     - virtual-desktops
 
 - name: 'Turn wrapping arround on for virtual desktops'
   shell: |
-    kwriteconfig6 --file ~/.config/kwinrc \
+    kwriteconfig6 --file {{kwinrc_path}} \
       --group Windows \
       --key RollOverDesktops true
   changed_when: false
@@ -62,11 +62,11 @@
 
 - name: 'Set virtual desktop name display time'
   shell: |
-    kwriteconfig6 --file ~/.config/kwinrc \
+    kwriteconfig6 --file {{kwinrc_path}} \
       --group Plugins \
       --key desktopchangeosdEnabled true
 
-    kwriteconfig6 --file ~/.config/kwinrc \
+    kwriteconfig6 --file {{kwinrc_path}} \
       --group Script-desktopchangeosd \
       --key PopupHideDelay 500
   changed_when: false
@@ -75,7 +75,7 @@
 
 - name: Disable desktop layout indicator
   shell: |
-    kwriteconfig6 --file ~/.config/kwinrc \
+    kwriteconfig6 --file {{kwinrc_path}} \
       --group Script-desktopchangeosd \
       --key TextOnly true
   changed_when: false
