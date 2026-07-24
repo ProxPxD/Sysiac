@@ -14,35 +14,35 @@
   shell: |
     kwriteconfig6 --file {{kwinrc_path}} \
     --group Desktops \
-    --key Name1 ┛
+    --key Name_1 ┛
 
     kwriteconfig6 --file {{kwinrc_path}} \
       --group Desktops \
-      --key Name2 ┻
+      --key Name_2 ┻
 
     kwriteconfig6 --file {{kwinrc_path}} \
       --group  Desktops \
-      --key Name3 ┗
+      --key Name_3 ┗
 
     kwriteconfig6 --file {{kwinrc_path}} \
       --group Desktops \
-      --key Name4 ┫
+      --key Name_4 ┫
 
     kwriteconfig6 --file {{kwinrc_path}} \
       --group Desktops \
-      --key Name5 ╋
+      --key Name_5 ╋
 
     kwriteconfig6 --file {{kwinrc_path}} \
       --group Desktops \
-      --key Name6 ┣
+      --key Name_6 ┣
 
     kwriteconfig6 --file {{kwinrc_path}} \
       --group Desktops \
-      --key Name7 ┓
+      --key Name_7 ┓
 
     kwriteconfig6 --file {{kwinrc_path}} \
       --group Desktops \
-      --key Name8 ┳
+      --key Name_8 ┳
 
     kwriteconfig6 --file {{kwinrc_path}} \
       --group Desktops \
