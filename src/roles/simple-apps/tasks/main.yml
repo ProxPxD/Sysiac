@@ -10,6 +10,7 @@
       - gtop
       - gping
       - fd
+      - lolcat
 
       - lsd
       - bat
