@@ -1,7 +1,11 @@
-- name: Install hardware pkgs
+- name: Install libs
   kewlfft.aur.aur:
     name:
+      - glibc
+      - lib32-glibc
       - libva
       - intel-media-driver
       - libva-utils
     state: present
+  tags:
+    - libs

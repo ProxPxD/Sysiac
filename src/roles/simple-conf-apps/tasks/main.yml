@@ -1,4 +1,4 @@
-- name: Install Apps
+- name: Install Apps via yay
   kewlfft.aur.aur:
     name:
       - viu
@@ -24,6 +24,19 @@
     state: present
   become: true
   become_user: '{{linux_user}}'
+  tags:
+    - install
+    - simple-apps
+
+- name: Install Apps via npm
+  npm:
+    name:
+      - '{{item}}'
+    global: true
+  become: true
+  become_user: '{{linux_user}}'
+  loop:
+    - "@tagspaces/shell"
   tags:
     - install
     - simple-apps
