@@ -11,10 +11,12 @@
       - gping
       - fd
       - lolcat
+      - renameutils
 
       - lsd
       - bat
       - git
+      - neovim
 
       - libreoffice-still
       - gimp
