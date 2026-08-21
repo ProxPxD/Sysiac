@@ -4,3 +4,5 @@
       - jq
       - yq
       - curl
+      - node
+      - npm
