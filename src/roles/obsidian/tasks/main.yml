@@ -20,8 +20,13 @@
   stat:
     path: '{{obsi_path}}/.git'
   register: obsi_git
-  failed_when: false
-  changed_when: false
+  tags:
+    - obsidian
+
+- name: Check if .obsidian  already exists
+  stat:
+    path: '{{obsi_path}}/.obsidian'
+  register: obsi_dot
   tags:
     - obsidian
 
@@ -42,7 +47,7 @@
 - name: Re-establish .obsidian
   copy:
     src: .obsidian
-    dest: '{{obsi_path}}/.obsidian/'
-  when: not obsi_git.stat.exists
+    dest: '{{obsi_path}}'
+  when: not obsi_dot.stat.exists
   tags:
     - obsidian
