@@ -1,0 +1,244 @@
+[
+  {
+    "color": "255, 214, 0",
+    "char": ";",
+    "icon": "lucide-dices"
+  },
+  {
+    "color": "255, 145, 0",
+    "char": "?"
+  },
+  {
+    "color": "255, 23, 68",
+    "char": "!"
+  },
+  {
+    "color": "124, 77, 255",
+    "char": "/",
+    "icon": "lucide-code-2"
+  },
+  {
+    "color": "0, 184, 212",
+    "char": "@",
+    "icon": "lucide-cpu"
+  },
+  {
+    "color": "0, 200, 83",
+    "char": "$",
+    "icon": "lucide-dollar-sign"
+  },
+  {
+    "color": "158, 158, 158",
+    "char": "%"
+  },
+  {
+    "char": "i",
+    "color": "0, 179, 255",
+    "icon": "lucide-info",
+    "custom": true
+  },
+  {
+    "char": "&",
+    "color": "4, 255, 0",
+    "icon": "lucide-brain-circuit",
+    "custom": true
+  },
+  {
+    "char": "~",
+    "color": "212, 0, 255",
+    "icon": "lucide-languages",
+    "custom": true
+  },
+  {
+    "char": "_",
+    "color": "128, 128, 128",
+    "custom": true,
+    "icon": "lucide-minus"
+  },
+  {
+    "char": "^",
+    "color": "201, 201, 201",
+    "icon": "lucide-list",
+    "custom": true
+  },
+  {
+    "char": "idea",
+    "color": "255, 234, 0",
+    "icon": "lucide-lightbulb",
+    "custom": true
+  },
+  {
+    "char": "art",
+    "color": "255, 0, 174",
+    "icon": "lucide-palette",
+    "custom": true
+  },
+  {
+    "char": "think",
+    "color": "11, 162, 36",
+    "icon": "lucide-brain",
+    "custom": true
+  },
+  {
+    "char": "learn",
+    "color": "140, 0, 179",
+    "icon": "lucide-brain-cog",
+    "custom": true
+  },
+  {
+    "char": "note",
+    "color": "232, 249, 98",
+    "icon": "lucide-edit-3",
+    "custom": true
+  },
+  {
+    "char": "plugin",
+    "color": "174, 255, 0",
+    "icon": "lucide-toy-brick",
+    "custom": true
+  },
+  {
+    "char": "culture",
+    "color": "102, 0, 255",
+    "icon": "lucide-venetian-mask",
+    "custom": true
+  },
+  {
+    "char": "obsi",
+    "color": "128, 0, 255",
+    "icon": "lucide-diamond",
+    "custom": true
+  },
+  {
+    "char": "W",
+    "color": "99, 54, 54",
+    "icon": null,
+    "custom": true
+  },
+  {
+    "char": "yt",
+    "color": "105, 0, 209",
+    "icon": "lucide-youtube",
+    "custom": true
+  },
+  {
+    "char": "orga",
+    "color": "255, 163, 212",
+    "icon": "star-list",
+    "custom": true
+  },
+  {
+    "char": "a",
+    "color": "51, 237, 240",
+    "icon": "lucide-messages-square",
+    "custom": true
+  },
+  {
+    "char": "r",
+    "color": "236, 19, 19",
+    "icon": "lucide-repeat",
+    "custom": true
+  },
+  {
+    "char": "rework",
+    "color": "225, 122, 5",
+    "icon": "lucide-history",
+    "custom": true
+  },
+  {
+    "char": "new",
+    "color": "17, 255, 0",
+    "icon": "lucide-plus-circle",
+    "custom": true
+  },
+  {
+    "char": "form",
+    "color": "185, 97, 49",
+    "icon": "lucide-ruler",
+    "custom": true
+  },
+  {
+    "char": "research",
+    "color": "0, 132, 255",
+    "icon": "lucide-microscope",
+    "custom": true
+  },
+  {
+    "char": "search",
+    "color": "179, 215, 51",
+    "icon": "lucide-search",
+    "custom": true
+  },
+  {
+    "char": "X",
+    "color": "255, 0, 0",
+    "icon": null,
+    "custom": true
+  },
+  {
+    "char": "ok",
+    "color": "0, 255, 4",
+    "icon": "lucide-check",
+    "custom": true
+  },
+  {
+    "char": "aim",
+    "color": "225, 0, 255",
+    "icon": "lucide-crosshair",
+    "custom": true
+  },
+  {
+    "char": "see",
+    "color": "189, 211, 23",
+    "icon": "lucide-eye",
+    "custom": true
+  },
+  {
+    "char": "ex",
+    "color": "148, 71, 0",
+    "icon": null,
+    "custom": true
+  },
+  {
+    "char": "wait",
+    "color": "201, 201, 201",
+    "icon": "lucide-loader",
+    "custom": true
+  },
+  {
+    "char": "birth",
+    "color": "255, 0, 234",
+    "icon": "lucide-cake",
+    "custom": true
+  },
+  {
+    "char": "sep",
+    "color": "39, 59, 211",
+    "icon": "lucide-baby",
+    "custom": true
+  },
+  {
+    "char": "lib",
+    "color": "52, 240, 0",
+    "icon": "lucide-book-copy",
+    "custom": true
+  },
+  {
+    "char": "toy",
+    "color": "255, 0, 0",
+    "icon": "lucide-toy-brick",
+    "custom": true
+  },
+  {
+    "char": "clock",
+    "color": "0, 255, 204",
+    "icon": "lucide-clock-10",
+    "custom": true
+  },
+  {
+    "char": "team",
+    "color": "251, 0, 255",
+    "icon": "lucide-heart-handshake",
+    "custom": true
+  }
+]

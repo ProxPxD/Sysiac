@@ -1,0 +1,18 @@
+.metadata-container .metadata-property[data-property-key="aliases"],
+.metadata-container .metadata-property[data-property-key^="BC-"],
+.metadata-container .metadata-property[data-property-key="template"],
+.metadata-container .metadata-property[data-property-key="struct"],
+.metadata-container .metadata-property[data-property-key="banner"] {
+    display: none !important;
+}
+
+
+div[data-property-key="aliases"],
+/* div[data-property-key="order"], */
+div[data-property-key^="BC-"],
+div[data-property-key="template"],
+div[data-property-key="struct"]
+div[data-property-key="banner"]
+{
+    display: none !important;
+}

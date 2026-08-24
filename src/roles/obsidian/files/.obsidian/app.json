@@ -1,0 +1,18 @@
+{
+  "alwaysUpdateLinks": true,
+  "readableLineLength": false,
+  "newFileLocation": "current",
+  "trashOption": "local",
+  "propertiesInDocument": "source",
+  "spellcheck": false,
+  "spellcheckDictionary": [
+    "Michalak",
+    "Martyna"
+  ],
+  "attachmentFolderPath": "Files",
+  "useTab": false,
+  "tabSize": 2,
+  "defaultViewMode": "preview",
+  "showUnsupportedFiles": true,
+  "showInlineTitle": false
+}

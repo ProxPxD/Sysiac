@@ -38,3 +38,11 @@
     - obsidian
     - git
     - clone
+
+- name: Re-establish .obsidian
+  copy:
+    src: .obsidian
+    dest: '{{obsi_path}}/.obsidian/'
+  when: not obsi_git.stat.exists
+  tags:
+    - obsidian

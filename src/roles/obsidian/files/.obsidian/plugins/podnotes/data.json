@@ -1,0 +1,96 @@
+{
+  "savedFeeds": {
+    "Italiano con Amore": {
+      "title": "Italiano con Amore",
+      "url": "https://anchor.fm/s/2fc9fd90/podcast/rss",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts122/v4/da/4d/96/da4d965d-1d27-7123-2179-db0836d0974a/mza_1307743332820938740.jpg/100x100bb.jpg",
+      "collectionId": 1527113279
+    }
+  },
+  "podNotes": {},
+  "defaultPlaybackRate": 1,
+  "playedEpisodes": {
+    "1. Benvenuti! - Sette Consigli per Imparare l'italiano": {
+      "title": "1. Benvenuti! - Sette Consigli per Imparare l'italiano",
+      "podcastName": "Italiano con Amore",
+      "time": 505.719118,
+      "duration": 505.719118,
+      "finished": true
+    },
+    "7. Il Mare Più Bello d’Italia: La Sardegna": {
+      "title": "7. Il Mare Più Bello d’Italia: La Sardegna",
+      "podcastName": "Italiano con Amore",
+      "time": 556.127608,
+      "duration": 556.127608,
+      "finished": true
+    },
+    "8. Parla Come Mangi! Espressioni Italiane in Cucina": {
+      "title": "8. Parla Come Mangi! Espressioni Italiane in Cucina",
+      "podcastName": "Italiano con Amore",
+      "time": 614.50449,
+      "duration": 614.50449,
+      "finished": true
+    },
+    "9. L’oro in Cucina: Il Tartufo!": {
+      "title": "9. L’oro in Cucina: Il Tartufo!",
+      "podcastName": "Italiano con Amore",
+      "time": 19.803754,
+      "duration": 729.745241,
+      "finished": false
+    }
+  },
+  "favorites": {
+    "icon": "lucide-star",
+    "name": "Favorites",
+    "shouldEpisodeRemoveAfterPlay": false,
+    "shouldRepeat": false,
+    "episodes": []
+  },
+  "queue": {
+    "icon": "list-ordered",
+    "name": "Queue",
+    "shouldEpisodeRemoveAfterPlay": true,
+    "shouldRepeat": false,
+    "episodes": []
+  },
+  "playlists": {},
+  "skipBackwardLength": 15,
+  "skipForwardLength": 15,
+  "currentEpisode": {
+    "title": "9. L’oro in Cucina: Il Tartufo!",
+    "streamUrl": "https://anchor.fm/s/2fc9fd90/podcast/play/21369747/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2020-9-20%2F99071f7c-13e5-9afb-2212-b73e9477555c.mp3",
+    "url": "https://podcasters.spotify.com/pod/show/italianoconamore/episodes/9--Loro-in-Cucina-Il-Tartufo-elalej",
+    "description": "<p>In questo episodio parliamo di un alimento, di un ingrediente della cucina italiana molto famoso e pregiato: <strong>il Tartufo!</strong></p>\n<p>Vi racconto dove cresce, come viene raccolto e come arriva nei nostri ristoranti e nelle nostre cucine.</p>\n<p><strong>Parole utili che uso nell’episodio 9:</strong></p>\n<p>TARTUFO= trufa (cogumelo) - truffle</p>\n<p>INQUINAMENTO: poluição - pollution</p>\n<p>PASTO: refeição - meal</p>\n<p>Link al sito della Fiera del tartufo: <a href=\"https://www.fieradeltartufo.org/\"><u>https://www.fieradeltartufo.org/</u></a></p>\n<p><a href=\"https://italianoconamore.com/contatto/\"><u>Scrivimi qui</u></a><a href=\"https://italianoconamore.com/contatto/\">: </a><a href=\"https://italianoconamore.com/contatto/\"><u>Contatto – Italiano con Amore</u></a></p>\n<p><br></p>\n<p><strong>Ouro na Cozinha: A Trufa!</strong></p>\n<p>Neste episódio vamos falar de um alimento, de um ingrediente da cozinha italiana muito famoso e precioso: a Trufa!</p>\n<p>Vou te contar onde ela cresce, como é colhida e como chega em nossos restaurantes e cozinhas.</p>\n<p>Palavras úteis que uso no episódio 9:</p>\n<p>TARTUFO= trufa (cogumelo) - truffle</p>\n<p>INQUINAMENTO: poluição - pollution</p>\n<p>PASTO: refeição – meal</p>\n<p>Link para o site da Feira da Trufa: <a href=\"https://www.fieradeltartufo.org/\"><u>https://www.fieradeltartufo.org/</u></a></p>\n<p><a href=\"https://italianoconamore.com/contatto/\"><u>Escreva-me Aqui</u></a><a href=\"https://italianoconamore.com/contatto/\">: </a><a href=\"https://italianoconamore.com/contatto/\"><u>Contatto – Italiano con Amore</u></a></p>\n",
+    "content": "",
+    "podcastName": "Italiano con Amore",
+    "artworkUrl": "https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_nologo/7917668/7917668-1656659036357-60e4cb3820f07.jpg",
+    "episodeDate": "2020-10-20T12:00:00.000Z",
+    "feedUrl": "https://anchor.fm/s/2fc9fd90/podcast/rss",
+    "itunesTitle": ""
+  },
+  "timestamp": {
+    "template": "- {{time}} "
+  },
+  "note": {
+    "path": "",
+    "template": ""
+  },
+  "download": {
+    "path": ""
+  },
+  "downloadedEpisodes": {
+    "Italiano con Amore": []
+  },
+  "localFiles": {
+    "icon": "folder",
+    "name": "Local Files",
+    "shouldEpisodeRemoveAfterPlay": false,
+    "shouldRepeat": false,
+    "episodes": []
+  },
+  "openAIApiKey": "",
+  "transcript": {
+    "path": "transcripts/{{podcast}}/{{title}}.md",
+    "template": "# {{title}}\n\nPodcast: {{podcast}}\nDate: {{date}}\n\n{{transcript}}"
+  }
+}

@@ -1,0 +1,15 @@
+/* YAML frontmatter keys */
+.cm-s-obsidian .frontmatter-container .frontmatter-key {
+    color: #FFD700; /* Gold */
+    font-weight: bold;
+}
+
+/* YAML frontmatter values */
+.cm-s-obsidian .frontmatter-container .frontmatter-value {
+    color: #87CEEB; /* Sky Blue */
+}
+
+/* YAML frontmatter punctuation (e.g., colons, dashes) */
+.cm-s-obsidian .frontmatter-container .frontmatter-punctuation {
+    color: #FF69B4; /* Hot Pink */
+}

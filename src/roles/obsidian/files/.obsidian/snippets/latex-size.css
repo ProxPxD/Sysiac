@@ -1,0 +1,15 @@
+/* Increase the size of both inline and block LaTeX equations */
+mjx-container {
+    transform: scale(1.5); /* Scale the size of the equations */
+    transform-origin: left center; /* Keep alignment consistent when scaling */
+    display: inline-block; /* Ensure inline elements maintain their flow */
+}
+
+/* Optional: Adjust the line height to better accommodate the scaled equations */
+mjx-container {
+    line-height: 1.2em !important;
+}
+
+.math-inline {
+  font-size: 15px;
+}

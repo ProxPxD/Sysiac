@@ -1,0 +1,20 @@
+{
+  "customStates": [
+    {
+      "state": "v",
+      "readingView": "👀"
+    },
+    {
+      "state": "?",
+      "readingView": "❓"
+    },
+    {
+      "state": "deferred",
+      "readingView": "👍"
+    },
+    {
+      "state": "??",
+      "readingView": "❓"
+    }
+  ]
+}

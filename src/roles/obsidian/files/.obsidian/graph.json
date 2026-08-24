@@ -1,0 +1,65 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": true,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "tag:#obsidian",
+      "color": {
+        "a": 1,
+        "rgb": 8195309
+      }
+    },
+    {
+      "query": "tag:#linguistics  ",
+      "color": {
+        "a": 1,
+        "rgb": 16774912
+      }
+    },
+    {
+      "query": "tag:#programming  ",
+      "color": {
+        "a": 1,
+        "rgb": 15009286
+      }
+    },
+    {
+      "query": "tag:#conlang  ",
+      "color": {
+        "a": 1,
+        "rgb": 14227410
+      }
+    },
+    {
+      "query": "tag:#ai",
+      "color": {
+        "a": 1,
+        "rgb": 65493
+      }
+    },
+    {
+      "query": "tag:#neural-network",
+      "color": {
+        "a": 1,
+        "rgb": 61183
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": -1.3,
+  "nodeSizeMultiplier": 1.32084745762712,
+  "lineSizeMultiplier": 1.46967457627119,
+  "collapse-forces": true,
+  "centerStrength": 0,
+  "repelStrength": 6.99661016949153,
+  "linkStrength": 0.868745762711864,
+  "linkDistance": 198,
+  "scale": 0.059326171875,
+  "close": true
+}

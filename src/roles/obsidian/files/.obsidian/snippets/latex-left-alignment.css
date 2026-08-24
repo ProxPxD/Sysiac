@@ -1,0 +1,12 @@
+/* Align block LaTeX expressions to the left */
+div.mathjax-block,
+mjx-container {
+    text-align: left !important;
+}
+
+/* Align inline LaTeX expressions to the left */
+span.cm-inline-math,
+span.cm-inline-math mjx-container {
+    display: inline-block;
+    text-align: left !important;
+}

@@ -1,0 +1,22 @@
+{
+  "version": "0.24.12",
+  "prefix": ";;",
+  "suffix": "::",
+  "expansionPrefix": "",
+  "expansionLinePrefix": "> ",
+  "expansionSuffix": "\\n\\n",
+  "autocomplete": true,
+  "autocompleteHelp": true,
+  "devMode": true,
+  "allowExternal": false,
+  "shortcutFiles": [],
+  "shortcuts": "\n__\n^hi$\n__\nreturn \"Hello! How are you?\";\n__\nhi - Expands into \"Hello! How are you?\".  A simple shortcut to see if Inline Scripts plugin is running.\n\n__\n^date$\n__\nreturn new Date().toLocaleDateString();\n__\ndate - Expands into the current, local date.\n\n__\n^time$\n__\nreturn new Date().toLocaleTimeString();\n__\ntime - Expands into the current, local time.\n\n__\n^datetime$\n__\nreturn new Date().toLocaleString();\n__\ndatetime - Expands into the current, local date and time.\n\n__\n\n__\nfunction roll(max) { return Math.trunc(Math.random() * max + 1); }\n__\nA dice roller function used in other shortcuts.\n\n__\n^[d|D]([0-9]+)$\n__\nreturn \"🎲 __\" + roll($1) + \"__ /D\" + $1;\n__\nd{max: >0} - A dice roller shortcut.  Expands into \"🎲 {roll result} /D{max}\".  {max} is the size of dice to roll.\n    - Examples - d3, d20, d57, d999\n\n__\n^([0-9]*)[d|D]([1-9][0-9]*)(|(?:[+-][0-9]+))$\n__\n$1 = Number($1) || 1;\n$3 ||= \"+0\";\nlet result = 0;\nlet label = \"D\" + $2;\nif ($1 > 1) { label += \"x\" + $1; }\nfor (let i = 0; i < $1; i++) { result += roll($2); }\nif (Number($3)) {\n\tresult += Number($3);\n\tlabel += $3;\n}\nif (isNaN(label.slice(1))) { label = \"(\" + label + \")\"; }\nreturn \"🎲 __\" + result + \"__ /\" + label;\n__\n{count: >0, default: 1}d{max: >0}{add: + or \\- followed by >0, default: +0} - A dice roller shortcut, same as d{max}, but with optional {count} and {add} parameters.  {count} is the number of dice to roll and add together.  {add} is \"+\" or \"-\" followed by an amount to adjust the result by.\n    - Examples - d100, 3d20, d10+5, 3d6+6\n\n__\n^l ([a-zA-Z0-9][a-zA-Z0-9\\-]+)$\n__\nreturn \"`$=dv.current().file.frontmatter['\" + $1 + \"'].map(e => '- ' + e).join('\\\\n')`\"\n__\nList a property\n\n__\n^hl ([a-zA-Z0-9][a-zA-Z0-9\\-]+)$\n__\nlet path = $1\nlet header = path[0].toUpperCase() + path.slice(1)\nlet query = \"`$=dv.current().file.frontmatter['\" + $1 + \"'].map(e => '- ' + e).join('\\\\n')`\"\nreturn `# ${header}\\n` + query\n__\nList property with a header\n\n__\n^nl ([0-9]*)$\n__\nreturn \"`$=\" + `\"<br/>\".repeat(${$1})` + \"`\"\n__\nAdd new lines\n\n__\n^hp ([a-zA-Z0-9][a-zA-Z0-9\\-\\.]+)$\n__\nlet path = $1\nlet header = path[0].toUpperCase() + path.slice(1)\ngetter = path.split('.').map(p => `[\"${p}\"]`).join('')\n\nlet query = `\\`$=dv.current().file.frontmatter${getter}\\``\nreturn `# ${header}\\n` + query\n__\n\n\n__\n^p ([a-zA-Z0-9][a-zA-Z0-9\\-\\.]+)$\n__\nlet path = $1\ngetter = path.split('.').map(p => `[\"${p}\"]`).join('')\n\nlet query = `\\`$=dv.current().file.frontmatter${getter}\\``\nreturn query\n__\n\n",
+  "buttonView": {
+    "visible": false,
+    "groups": {
+      "Group 01": {
+        "buttons": []
+      }
+    }
+  }
+}

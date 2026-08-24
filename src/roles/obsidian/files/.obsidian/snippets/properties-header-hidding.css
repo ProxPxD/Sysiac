@@ -1,0 +1,7 @@
+/* On project notes, hide the add properties button
+   and the cxsclasses property */
+
+.metadata-properties-heading {
+  display: none;
+
+}

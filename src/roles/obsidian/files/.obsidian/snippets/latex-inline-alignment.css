@@ -1,0 +1,5 @@
+/* Make space after inline latex expressions */
+
+.math-inline {
+    margin-right: 42px;
+  }

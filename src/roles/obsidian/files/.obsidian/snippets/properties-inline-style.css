@@ -1,0 +1,21 @@
+/* Disable highlighting for inline field keys in Dataview */
+
+.dataview.inline-field-key {
+    display: none !important; /* Remove the element entirely */
+}
+
+.dataview.inline-field-value {
+    background-color: inherit !important; /* Inherit the background color */
+    color: inherit !important; /* Inherit the text color */
+    font-family: inherit !important; /* Inherit the font-family */
+    padding: 0 !important; /* Remove any extra padding */
+    border: none !important; /* Remove any border */
+}
+
+/* Optional: Remove any background or border from inline code */
+.cm-inline-code,
+.markdown-preview-view code {
+    background: none !important;
+    border: none !important;
+}
+

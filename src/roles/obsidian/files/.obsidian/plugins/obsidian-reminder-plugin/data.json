@@ -1,0 +1,43 @@
+{
+  "scanned": true,
+  "reminders": {
+    "Anhi Ustalenia Task.md": [
+      {
+        "title": "porozmawiać o godzinach zaczęcia pracy",
+        "time": "2024-10-12",
+        "rowNumber": 4
+      }
+    ],
+    "Anhi Task Sekretareczka.md": [
+      {
+        "title": "Tasks Plugin Tasks (apply to my obsidian as well) ⛔ 8t9b2n,0vjv7q,ovullg",
+        "time": "2024-10-22",
+        "rowNumber": 4
+      },
+      {
+        "title": "Depluralize Convention**s** (+dvs) 🔽 ⏳ 2024-10-07",
+        "time": "2024-10-22",
+        "rowNumber": 8
+      }
+    ]
+  },
+  "debug": false,
+  "settings": {
+    "reminderTime": "09:00",
+    "laters": "In 30 minutes\nIn 1 hour\nIn 3 hours\nTomorrow\nNext week",
+    "useSystemNotification": false,
+    "autoCompleteTrigger": "@{",
+    "primaryReminderFormat": "KanbanPluginReminderFormat",
+    "enableReminderPluginReminderFormat": true,
+    "dateFormat": "YYYY-MM-DD",
+    "dateTimeFormat": "YYYY-MM-DD HH:mm",
+    "strictDateFormat": false,
+    "linkDatesToDailyNotes": false,
+    "enableTasksPluginReminderFormat": false,
+    "useCustomEmojiForTasksPlugin": false,
+    "removeTagsForTasksPlugin": false,
+    "enableKanbanPluginReminderFormat": false,
+    "editDetectionSec": 10,
+    "reminderCheckIntervalSec": 5
+  }
+}

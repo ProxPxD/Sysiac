@@ -1,0 +1,50 @@
+{
+  "unlockedSpecies": [
+    "bluebird",
+    "scarletRobin",
+    "blackCappedChickadee",
+    "spangledCotinga",
+    "tuftedTitmouse",
+    "shimaEnaga",
+    "pinkRobin",
+    "redAvadavat",
+    "americanGoldfinch",
+    "pigeon",
+    "carolinaWren",
+    "europeanRobin",
+    "blueJay",
+    "redWarbler",
+    "redCardinal",
+    "paintedBunting",
+    "barnSwallow",
+    "houseFinch",
+    "mistletoebird",
+    "darkEyedJunco",
+    "violetBackedStarling",
+    "americanRobin",
+    "cubanTody",
+    "elegantEuphonia"
+  ],
+  "currentSpecies": "elegantEuphonia",
+  "unlockedHats": [
+    "none",
+    "fez",
+    "baseball-cap",
+    "viking-helmet",
+    "beanie",
+    "straw-hat",
+    "cowboy-hat",
+    "cordovan-hat",
+    "top-hat",
+    "sun-hat",
+    "wizard-hat",
+    "flower-hat"
+  ],
+  "currentHat": "baseball-cap",
+  "settings": {
+    "birbScaleMultiplier": 4,
+    "uiScaleMultiplier": 1.1,
+    "birbMode": false,
+    "soundEnabled": true
+  }
+}

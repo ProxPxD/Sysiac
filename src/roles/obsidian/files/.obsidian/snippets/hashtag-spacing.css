@@ -1,0 +1,4 @@
+/* Add vertical spacing after lines with hashtags in reading mode */
+.markdown-preview-view p:first-child {
+    margin-bottom: 1.5em; /* Adjust this value for more or less spacing */
+}

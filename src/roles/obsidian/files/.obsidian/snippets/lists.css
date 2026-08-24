@@ -1,0 +1,24 @@
+.cm-s-obsidian div:not(.CodeMirror-activeline) > pre.CodeMirror-line
+span.cm-formatting-list-ul {
+  font-size: 0;  /* remove the bullet char */
+}
+
+.cm-s-obsidian div:not(.CodeMirror-activeline) > pre.CodeMirror-line
+span.cm-formatting-list-ul::before {
+  font-size: 4rem;
+  padding-right: 0.18rem;
+  color: var(--text-normal);
+}
+
+.cm-s-obsidian div:not(.CodeMirror-activeline) > pre.CodeMirror-line
+span.cm-formatting-list-ul.cm-list-1::before {
+  content: '•';
+}
+.cm-s-obsidian div:not(.CodeMirror-activeline) > pre.CodeMirror-line
+span.cm-formatting-list-ul.cm-list-2::before {
+  content: '◦';
+}
+.cm-s-obsidian div:not(.CodeMirror-activeline) > pre.CodeMirror-line
+span.cm-formatting-list-ul.cm-list-3::before {
+  content: '▪';
+}

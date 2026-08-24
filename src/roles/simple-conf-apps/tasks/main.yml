@@ -30,8 +30,7 @@
 
 - name: Install Apps via npm
   npm:
-    name:
-      - '{{item}}'
+    name: '{{item}}'
     global: true
   become: true
   become_user: '{{linux_user}}'
