@@ -56,12 +56,12 @@ set -gx PATH /usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin
 ###########
 function _run_py
         set -l py "$CONDA_ENVS/$argv[1]/bin/python"
-        $py $argv[2..-1] 
+        $py $argv[2..-1]
 end
 #funcsave _run_py
 
 # scripts
-function t 
+function t
         _run_py scraplang311 "$PROGS/ScrapLang/src/translate.py" $argv
 end
 abbr -a -- tot    't -ot'
@@ -157,6 +157,8 @@ abbr -a -- lgvi   'lsd | grep -vi'
 abbr -a -- lgiv   'lsd | grep -iv'
 abbr -a -- llg    'lsd -lh | grep'
 abbr -a -- llag   'lsd -lhA | grep'
+abbr -a -- lag    'lsd -A | grep'
+abbr -a -- lalg   'lsd -Alh | grep'
 # mv
 abbr -a -- sm    'sudo mv'
 abbr -a -- smv   'sudo mv'
