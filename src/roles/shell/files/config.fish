@@ -115,11 +115,11 @@ alias wa      'nchat -d ~/.config/nchat-whatsapp'
 # fish
 abbr -a --position anywhere -- ficonf '$__fish_config_dir/config.fish'
 abbr -a --position anywhere -- fconf '$__fish_config_dir/config.fish'
-abbr -a -- vconf 'vim $__fish_config_dir/config.fish'
-abbr -a -- vcong 'vim $__fish_config_dir/config.fish'
-abbr -a -- vc    'vim $__fish_config_dir/config.fish'
-abbr -a -- vcf   'vim $__fish_config_dir/functions/'
-abbr -a -- vcfc  'vim $__fish_config_dir/functions/conda.fish'
+abbr -a -- vconf 'nvim $__fish_config_dir/config.fish'
+abbr -a -- vcong 'nvim $__fish_config_dir/config.fish'
+abbr -a -- vc    'nvim $__fish_config_dir/config.fish'
+abbr -a -- vcf   'nvim $__fish_config_dir/functions/'
+abbr -a -- vcfc  'nvim $__fish_config_dir/functions/conda.fish'
 abbr -a -- bconf 'bat $__fish_config_dir/config.fish'
 abbr -a -- bc    'bat $__fish_config_dir/config.fish'
 abbr -a -- bcg   'bat $__fish_config_dir/config.fish | grep'
@@ -132,7 +132,7 @@ abbr -a  --position anywhere -- !1  "(history | head -n1 | tail -n1 | string spl
 abbr -a  --position anywhere -- !2  "(history | head -n2 | tail -n1 | string split ' ' | tail -n +2 | string join ' ')"
 # environment.d
 abbr -a -- le  'lsd ~/.config/environment.d/'
-abbr -a -- ve  'vim ~/.config/environment.d/'
+abbr -a -- ve  'nvim ~/.config/environment.d/'
 abbr -a -- be  'bat ~/.config/environment.d/'
 abbr -a --position anywhere -- envd  '~/.config/environment.d/'
 # env
@@ -224,12 +224,12 @@ abbr -a -- tagf 'tmsu files'
 abbr -a -- tagd 'tmsu delete'
 abbr -a -- tagx 'xargs -I @ tmsu tag @'
 # vim
-set -Ux VISUAL 'vim'
+set -Ux VISUAL 'nvim'
 set -Ux EDITOR $VISUAL
 
-abbr -a -- vi 'vim'
-abbr -a -- v  'vim'
-abbr -a -- sv 'sudo vim'
+abbr -a -- vi 'nvim'
+abbr -a -- v  'nvim'
+abbr -a -- sv 'sudo nvim'
 # mkdir
 abbr -a -- mk  'mkdir'
 abbr -a -- mkp 'mkdir -p'
