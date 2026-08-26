@@ -1,7 +1,7 @@
 - name: Establish KDE global shortcuts
   copy:
     src: kglobalshortcutsrc
-    dest: '{{ user_path }}/.config/kglobalshortcutsrc'
+    dest: '{{user_path}}/.config/kglobalshortcutsrc'
     mode: '0644'
   tags:
     - shortcuts
