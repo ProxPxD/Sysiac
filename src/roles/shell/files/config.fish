@@ -16,7 +16,7 @@ set -gx fish_color_end brblue
 ########
 # Envs #
 ########
-#
+# Editor
 set -gx EDITOR vim
 set -gx VISUAL vim
 # helping
