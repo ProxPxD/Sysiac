@@ -1,23 +1,34 @@
+schema:
+  '<APP>':
+    '?path':
+    '?files':
+      - {name: '<NAME>', '?path': '<PATH>'}
+    '?dirs':
+      - {name: '<NAME>', '?path': '<PATH>'}
+
 confs:
   lsd:
     files:
-      - config.yaml
-      - icons.yaml
+      - name: config.yaml
+      - name: icons.yaml
   bat:
     files:
-      - config
+      - name: config
   git:
-    dir: '{{user_path}}'
+    path: '{{user_path}}'
     files:
-      - '.gitconfig'
+      - name: '.gitconfig'
   ssh:
-    dir: '{{user_path}}/.ssh'
+    path: '{{user_path}}/.ssh'
     files:
-      - 'config'
+      - name: 'config'
   vim:
-    dir: '{{user_path}}'
+    path: '{{user_path}}'
     files:
-      - .vimrc
+      - name: .vimrc
   nvim:
     files:
-      - init.lua
+      - name: init.lua
+  fcitx5:
+    dirs:
+      - name: fcitx5
