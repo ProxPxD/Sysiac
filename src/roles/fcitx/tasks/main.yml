@@ -13,6 +13,17 @@
     - install
     - fcitx
 
+- name: Add Shell Conf
+  copy:
+    src: 'fcitx.fish'
+    dest: '{{fish_path}}/conf.d'
+    mode: '0644'
+    force: false
+  tags:
+    - fcitx
+    - fish
+    - shell
+
 - name: Ensure configuration lines exist
   lineinfile:
     path: ~/.some-file

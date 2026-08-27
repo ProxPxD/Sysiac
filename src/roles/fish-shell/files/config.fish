@@ -24,14 +24,6 @@ set -gx CONDA_ENVS /home/proxpxd/.conda/envs
 set -gx PROGS /home/proxpxd/Programs
 # system
 set -gx CRYPTOGRAPHY_OPENSSL_NO_LEGACY 1
-# fcitx
-set -gx XMODIFIERS @im=fcitx
-set -gx GTK_IM_MODULE fcitx
-set -gx QT_IM_MODULE fcitx
-set -gx SDL_IM_MODULE fcitx
-set -gx GLFW_IM_MODULE fcitx
-set -gx FCITX_DISABLE_IM_IN_PASSWORD 1
-set -gx ELECTRON_ENABLE_WAYLAND 1
 # webgpu
 set -gx GBM_BACKEND nvidia-drm
 set -gx __GLX_VENDOR_LIBRARY_NAME nvidia
