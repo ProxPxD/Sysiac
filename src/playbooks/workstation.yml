@@ -6,6 +6,7 @@
     # Core/Common
     - libs
     - basic-tools
+    - printers
     - fonts
     - konsole
     - fish-shell

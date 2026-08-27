@@ -29,3 +29,6 @@ confs:
   nvim:
     files:
       - name: init.lua
+  yay:
+    files:
+      - name: config.json

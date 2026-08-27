@@ -9,3 +9,11 @@
   tags:
     - setup
     - sudoers
+
+- name: Install yay
+  kewlfft.aur.aur:
+    name: yay
+    state: present
+  tags:
+    - setup
+    - yay

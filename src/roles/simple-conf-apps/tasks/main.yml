@@ -17,10 +17,14 @@
       - bat
       - git
       - neovim
+      - yt-dlp
+      - yt-dlp-ejs
 
       - libreoffice-still
       - gimp
       - gparted
+      - telegram-desktop-bin
+      - signal-desktop-beta-bin
     state: present
   become: true
   become_user: '{{linux_user}}'
