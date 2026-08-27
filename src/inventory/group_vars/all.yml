@@ -7,6 +7,7 @@ doc_path: '{{user_path}}/Documents'
 desktop_path: '{{user_path}}/Desktop'
 conf_path: '{{user_path}}/.config'
 
-
 git_username: '{{username}}'
 git_ssh_key: '{{user_path}}/.ssh/id_ed25519'
+
+fish_path: '{{user_path}}/.config/fish'

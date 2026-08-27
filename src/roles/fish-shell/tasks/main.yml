@@ -101,3 +101,13 @@
   tags:
     - shell
     - fish
+
+- name: Add Functions
+  copy:
+    src: functions
+    dest: '{{fish_path}}'
+    mode: '0644'
+    force: false
+  tags:
+    - fish
+    - shell
