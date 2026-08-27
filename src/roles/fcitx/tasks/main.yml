@@ -1,0 +1,25 @@
+- name: Install fcitx via yay
+  kewlfft.aur.aur:
+    name:
+      - fcitx5
+      - fcitx5-configtool
+      - fcitx5-gtk
+      - fcitx5-qt
+      - fcitx5-chinese-addons
+    state: present
+  become: true
+  become_user: '{{linux_user}}'
+  tags:
+    - install
+    - fcitx
+
+- name: Ensure configuration lines exist
+  lineinfile:
+    path: ~/.some-file
+    line: '{{ item }}'
+    insertafter: EOF
+    state: present
+  loop:
+    - 'first line'
+    - 'second line'
+    - 'third line'

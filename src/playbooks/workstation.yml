@@ -8,7 +8,7 @@
     - basic-tools
     - fonts
     - konsole
-    - shell
+    - fish-shell
     # Linux UI
     - virtual-desktops
     - shortcuts
