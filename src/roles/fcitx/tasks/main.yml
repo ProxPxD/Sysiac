@@ -1,4 +1,4 @@
-- name: Install fcitx via yay
+- name: Install Fcitx5 via yay
   kewlfft.aur.aur:
     name:
       - fcitx5
@@ -12,6 +12,23 @@
   tags:
     - install
     - fcitx
+
+- name: Set Fcitx5 Wayland virtual keyboard
+  ini_file:
+    path: '{{user_path}}/.config/kwinrc'
+    section: Wayland
+    option: 'InputMethod[$e]'
+    value: /usr/share/applications/fcitx5-wayland-launcher.desktop
+
+- name: Establish Fcitx Conf
+  copy:
+    src: 'fcitx5/'
+    dest: '{{user_path}}/.config/fcitx5/'
+    mode: '0644'
+    directory_mode: '0755'
+  tags:
+    - fcitx
+    - conf
 
 - name: Add Shell Conf
   copy:

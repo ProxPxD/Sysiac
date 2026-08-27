@@ -9,6 +9,7 @@
     - fonts
     - konsole
     - fish-shell
+    - fcitx
     # Linux UI
     - virtual-desktops
     - shortcuts

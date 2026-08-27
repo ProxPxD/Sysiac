@@ -29,6 +29,3 @@ confs:
   nvim:
     files:
       - name: init.lua
-  fcitx5:
-    dirs:
-      - name: fcitx5
