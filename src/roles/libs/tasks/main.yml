@@ -7,6 +7,8 @@
       - intel-media-driver
       - libva-utils
       - nerd-fonts-hack
+      - bluez
+      - bluez-utils
     state: present
   tags:
     - libs

@@ -1,0 +1,25 @@
+- name: Read Dolphin global view properties
+  xattr:
+    path: '{{view_properties_path}}'
+    namespace: user
+    key: kde.fm.viewproperties#1
+    state: read
+  register: dolphin_view_props
+  changed_when: false
+  tags:
+    - dolphin
+
+- name: Enable hidden files in Dolphin
+  command:
+    argv:
+      - setfattr
+      - -n
+      - user.kde.fm.viewproperties#1
+      - -v
+      - "{{ dolphin_view_props.xattr['user.kde.fm.viewproperties#1'] | regex_replace('HiddenFilesShown=(true|false)', 'HiddenFilesShown=true') }}"
+      - '{{ view_properties_path }}'
+  when:
+    - dolphin_view_props.xattr is defined
+    - dolphin_view_props.xattr['user.kde.fm.viewproperties#1'] is not search('HiddenFilesShown=true')
+  tags:
+    - dolphin

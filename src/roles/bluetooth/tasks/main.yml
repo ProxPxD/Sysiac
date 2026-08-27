@@ -1,0 +1,8 @@
+- name: Enable Bluetooth
+  systemd:
+    name: bluetooth.service
+    enabled: true
+    state: started
+  become: true
+  tags:
+    - bluetooth
