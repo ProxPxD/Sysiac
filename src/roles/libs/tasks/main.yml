@@ -6,6 +6,7 @@
       - libva
       - intel-media-driver
       - libva-utils
+      - nerd-fonts-hack
     state: present
   tags:
     - libs

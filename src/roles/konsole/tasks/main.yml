@@ -7,7 +7,7 @@
     - konsole
     - profile
 
-- name: Set default Konsole profile
+- name: Set new Konsole profile default
   ini_file:
     path: '{{user_path}}/.config/konsolerc'
     section: Desktop Entry
@@ -16,3 +16,15 @@
   tags:
     - konsole
     - profile
+
+- name: Configure Konsole Font
+  ini_file:
+    path: '{{user_path}}/.local/share/konsole/{{username}}.profile'
+    section: 'Appearance'
+    option: 'Font'
+    value: 'Hack Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,,0,0'
+    create: true
+  tags:
+    - shell
+    - fish
+    - konsole
