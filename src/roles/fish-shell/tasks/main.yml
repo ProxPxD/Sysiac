@@ -111,3 +111,12 @@
   tags:
     - fish
     - shell
+
+- name: Use custom command execution
+  replace:
+    path: '{{fish_path}}/functions/fish_prompt.fish'
+    regexp: '^(bind .*)_tide_enter_transient$'
+    replace: '\1__execute_commands'
+  tags:
+    - fish
+    - shell
