@@ -104,10 +104,10 @@
 
 - name: Add Functions
   copy:
-    src: functions
-    dest: '{{fish_path}}'
+    src: functions/
+    dest: '{{fish_path}}/functions/'
     mode: '0644'
-    force: false
+    directory_mode: '0755'
   tags:
     - fish
     - shell

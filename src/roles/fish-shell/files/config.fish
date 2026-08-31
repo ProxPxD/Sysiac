@@ -119,9 +119,11 @@ abbr -a -- bcgi  'bat $__fish_config_dir/config.fish | grep -i'
 abbr -a -- hc    'head $__fish_config_dir/config.fish'
 abbr -a -- bcf   'bat $__fish_config_dir/functions/'
 abbr -a -- bcfc  'bat $__fish_config_dir/functions/conda.fish'
-abbr -a  --position anywhere -- !!  "(history | head -n1 | string split ' ' | tail -n +2 | string join ' ')"
-abbr -a  --position anywhere -- !1  "(history | head -n1 | tail -n1 | string split ' ' | tail -n +2 | string join ' ')"
-abbr -a  --position anywhere -- !2  "(history | head -n2 | tail -n1 | string split ' ' | tail -n +2 | string join ' ')"
+abbr -a --position anywhere -- !!  "(history | head -n1 | string split ' ' | tail -n +2 | string join ' ')"
+abbr -a --position anywhere -- !1  "(history | head -n1 | tail -n1 | string split ' ' | tail -n +2 | string join ' ')"
+abbr -a --position anywhere -- !2  "(history | head -n2 | tail -n1 | string split ' ' | tail -n +2 | string join ' ')"
+abbr -a -- lsf "lsd | grep -vE 'tide|prompt|fisher'"
+
 # environment.d
 abbr -a -- le  'lsd ~/.config/environment.d/'
 abbr -a -- ve  'nvim ~/.config/environment.d/'
@@ -131,7 +133,7 @@ abbr -a --position anywhere -- envd  '~/.config/environment.d/'
 abbr -a -- eg  'env | grep'
 abbr -a -- egi 'env | grep -i'
 # source
-abbr -a -- s 'source $__fish_config_dir/config.fish'
+abbr -a -- s 'exec fish'
 # ls(d)
 abbr -a -- ls     'lsd'
 abbr -a -- l      'lsd'

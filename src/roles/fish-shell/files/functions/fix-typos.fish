@@ -1,4 +1,4 @@
-function __global_fix_typos --description 'Fix known typos before execution'
+function fix_typos --description 'Fix known typos before execution'
     set cmd (commandline)
     set newcmd $cmd
 
