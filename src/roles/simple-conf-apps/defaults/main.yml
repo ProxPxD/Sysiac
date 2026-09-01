@@ -48,3 +48,6 @@ confs:
   systemctl:
     files:
       - {name: systemctl.fish, path: '{{fish_path}}/conf.d'}
+  podman:
+    files:
+      - {name: podman.fish, path: '{{fish_path}}/conf.d'}
