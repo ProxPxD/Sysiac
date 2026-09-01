@@ -67,3 +67,6 @@ confs:
   watch:
     files:
       - {name: watch.fish, path: '{{fish_path}}/conf.d'}
+  xdg-open:
+    files:
+      - {name: xdg-open.fish, path: '{{fish_path}}/conf.d'}
