@@ -428,11 +428,3 @@ abbr -a -- tkr     'task remove'
 abbr -a -- tcol    'task show report | grep columns | choose 1 | string split , | sort | uniq'
 abbr -a -- tcols   'task show report | grep columns | choose 1 | string split , | sort | uniq'
 abbr -a -- tcolors 'task rc.color=on rc._forcecolor=1 color legend'
-
-# timew
-abbr -a -- tsum    'timew summary'
-abbr -a -- t1      'timew start'
-abbr -a -- t0      'timew stop'
-abbr -a -- tcon    'timew continue'
-abbr -a -- tcan    'timew cancel'
-abbr -a -- tdel    'timew delete'
