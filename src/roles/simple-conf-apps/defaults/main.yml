@@ -42,3 +42,6 @@ confs:
   taskwarrior:
     files:
       - {name: taskwarrior.fish, path: '{{fish_path}}/conf.d'}
+  networking:
+    files:
+      - {name: networking.fish, path: '{{fish_path}}/conf.d'}

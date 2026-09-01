@@ -402,5 +402,3 @@ abbr -a -- sus    'systemctl --user status'
 abbr -a -- sued   'systemctl --user edit'
 abbr -a -- suedi  'systemctl --user edit'
 abbr -a -- suc    'systemctl --user cat'
-# networking
-abbr -a -- mac    'ip link show wlan0 | grep ether | awk \'{print $2}\''
