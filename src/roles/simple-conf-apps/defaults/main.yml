@@ -58,3 +58,6 @@ confs:
   python:
     files:
       - {name: python.fish, path: '{{fish_path}}/conf.d'}
+  dolphin:
+    files:
+      - {name: dolphin.fish, path: '{{fish_path}}/conf.d'}

@@ -250,5 +250,3 @@ abbr -a -- w1 'watch -n 1 -c'
 abbr -a -- viun  'viu -n'
 abbr -a -- viuh  'viu -h'
 abbr -a -- viunh 'viu -nh'
-# dolphin
-abbr -a -- d 'dolphin . &'
