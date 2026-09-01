@@ -64,3 +64,6 @@ confs:
   viu:
     files:
       - {name: viu.fish, path: '{{fish_path}}/conf.d'}
+  watch:
+    files:
+      - {name: watch.fish, path: '{{fish_path}}/conf.d'}

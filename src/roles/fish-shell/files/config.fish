@@ -244,5 +244,3 @@ abbr -a -- yaq   'yq'
 abbr -a -- ymq   'yq'
 # xdg-open
 abbr -a -- x 'xdg-open'
-# watch
-abbr -a -- w1 'watch -n 1 -c'
