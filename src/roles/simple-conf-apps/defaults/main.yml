@@ -36,3 +36,9 @@ confs:
   nchat:
     files:
       - {name: nchat.fish, path: '{{fish_path}}/conf.d'}
+  timew:
+    files:
+      - {name: timew.fish, path: '{{fish_path}}/conf.d'}
+  taskwarrior:
+    files:
+      - {name: taskwarrior.fish, path: '{{fish_path}}/conf.d'}
