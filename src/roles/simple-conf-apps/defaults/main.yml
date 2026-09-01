@@ -55,3 +55,6 @@ confs:
   conda:
     files:
       - {name: conda.fish, path: '{{fish_path}}/conf.d'}
+  python:
+    files:
+      - {name: python.fish, path: '{{fish_path}}/conf.d'}

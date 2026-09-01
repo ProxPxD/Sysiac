@@ -252,6 +252,3 @@ abbr -a -- viuh  'viu -h'
 abbr -a -- viunh 'viu -nh'
 # dolphin
 abbr -a -- d 'dolphin . &'
-# python
-abbr -a -- py 'python'
-abbr -a -- p  'python'
