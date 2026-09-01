@@ -32,3 +32,7 @@ confs:
   yay:
     files:
       - name: config.json
+      - {name: yay.fish, path: '{{fish_path}}/conf.d'}
+  nchat:
+    files:
+      - {name: nchat.fish, path: '{{fish_path}}/conf.d'}

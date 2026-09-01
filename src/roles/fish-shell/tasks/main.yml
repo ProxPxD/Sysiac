@@ -10,13 +10,12 @@
 - name: Establish Config
   copy:
     src: config.fish
-    dest: '{{user_path}}/.config/fish/config.fish'
+    dest: '{{fish_path}}/config.fish'
     mode: '0644'
   tags:
     - shell
     - fish
-    - establish
-    - move
+    - conf
 
 - name: Add fish to valid shells
   lineinfile:
@@ -31,7 +30,7 @@
 
 - name: Set fish as default shell
   user:
-    name: '{{ linux_user }}'
+    name: '{{linux_user}}'
     shell: /usr/bin/fish
   become: true
   tags:
@@ -41,7 +40,7 @@
 
 - name: Check if Fisher Exists
   stat:
-    path: ~/.config/fish/functions/fisher.fish
+    path: '{{fish_path}}/functions/fisher.fish'
   register: fisher
   tags:
     - shell
@@ -111,6 +110,7 @@
   tags:
     - fish
     - shell
+    - conf
 
 - name: Use custom command execution
   replace:

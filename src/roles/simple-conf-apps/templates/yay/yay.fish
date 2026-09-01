@@ -1,0 +1,13 @@
+# abbr
+abbr -a -- pacman 'yay'
+abbr -a -- ya     'yay'
+abbr -a -- y      'yay'
+abbr -a -- yq     'yay -Q'
+abbr -a -- yqg    'yay -Q | grep'
+abbr -a -- yqgi   'yay -Q | grep -i'
+abbr -a -- yqgie  'yay -Q | grep -iE'
+abbr -a -- yql    'yay -Ql'
+abbr -a -- ys     'yay -Ss'
+abbr -a -- yy     'yay -Sy'
+abbr -a -- yu     'yay -Syu --noconfirm --sudoloop'
+abbr -a -- yr     'yay -Rns'
