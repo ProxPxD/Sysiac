@@ -52,3 +52,6 @@ confs:
   podman:
     files:
       - {name: podman.fish, path: '{{fish_path}}/conf.d'}
+  conda:
+    files:
+      - {name: conda.fish, path: '{{fish_path}}/conf.d'}
