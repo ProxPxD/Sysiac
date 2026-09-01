@@ -18,6 +18,7 @@ confs:
     path: '{{user_path}}'
     files:
       - name: '.gitconfig'
+      - {name: git.fish, path: '{{fish_path}}/conf.d'}  
   ssh:
     path: '{{user_path}}/.ssh'
     files:
