@@ -61,3 +61,6 @@ confs:
   dolphin:
     files:
       - {name: dolphin.fish, path: '{{fish_path}}/conf.d'}
+  viu:
+    files:
+      - {name: viu.fish, path: '{{fish_path}}/conf.d'}

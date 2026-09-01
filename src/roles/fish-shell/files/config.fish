@@ -246,7 +246,3 @@ abbr -a -- ymq   'yq'
 abbr -a -- x 'xdg-open'
 # watch
 abbr -a -- w1 'watch -n 1 -c'
-# viu
-abbr -a -- viun  'viu -n'
-abbr -a -- viuh  'viu -h'
-abbr -a -- viunh 'viu -nh'
