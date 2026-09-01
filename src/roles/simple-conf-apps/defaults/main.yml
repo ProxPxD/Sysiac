@@ -45,3 +45,6 @@ confs:
   networking:
     files:
       - {name: networking.fish, path: '{{fish_path}}/conf.d'}
+  systemctl:
+    files:
+      - {name: systemctl.fish, path: '{{fish_path}}/conf.d'}
