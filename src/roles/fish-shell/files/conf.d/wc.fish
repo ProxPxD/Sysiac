@@ -1,0 +1,5 @@
+abbr -a -- wcl 'wc -l'
+abbr -a -- wcc 'wc -c'
+abbr -a --position anywhere -- \\wc  '| wc'
+abbr -a --position anywhere -- \\wcl '| wc -l'
+abbr -a --position anywhere -- \\wcc '| wc -c'
