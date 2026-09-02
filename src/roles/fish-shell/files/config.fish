@@ -212,15 +212,7 @@ abbr -a -- zq   'zoxide query -l'
 abbr -a -- zqa  'zoxide query -als'
 abbr -a -- zqag 'zoxide query -als | grep'
 abbr -a -- zr   'zoxide remove'
-# tmsu
-abbr -a -- tag  'tmsu tag'
-abbr -a -- tags 'tmsu tags'
-abbr -a -- tagi 'tmsu init'
-abbr -a -- tagm 'tmsu mount'
-abbr -a -- tagu 'tmsu unmount'
-abbr -a -- tagf 'tmsu files'
-abbr -a -- tagd 'tmsu delete'
-abbr -a -- tagx 'xargs -I @ tmsu tag @'
+
 # vim
 set -Ux VISUAL 'nvim'
 set -Ux EDITOR $VISUAL
