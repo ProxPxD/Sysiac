@@ -129,11 +129,7 @@ abbr -a -- le  'lsd ~/.config/environment.d/'
 abbr -a -- ve  'nvim ~/.config/environment.d/'
 abbr -a -- be  'bat ~/.config/environment.d/'
 abbr -a --position anywhere -- envd  '~/.config/environment.d/'
-# env
-abbr -a -- eg  'env | grep'
-abbr -a -- egi 'env | grep -i'
-# source
-abbr -a -- s 'exec fish'
+
 # ls(d)
 abbr -a -- ls     'lsd'
 abbr -a -- l      'lsd'
@@ -157,16 +153,7 @@ abbr -a -- lag    'lsd -A | grep'
 abbr -a -- lalg   'lsd -Alh | grep'
 abbr -a -- llgi   'lsd -lh | grep -i'
 abbr -a -- llgv   'lsd -lh | grep -v'
-# mv
-abbr -a -- sm    'sudo mv'
-abbr -a -- smv   'sudo mv'
-abbr -a -- smr   'sudo mv -r'
-abbr -a -- smvr  'sudo mv -r'
-# rm
-abbr -a -- rmd  'rm -d'
-abbr -a -- rmr  'rm -r'
-abbr -a -- rmrf 'rm -rf'
-abbr -a -- srm  'sudo rm'
+
 # bat/cat/less
 abbr -a -- cat  'bat'
 abbr -a -- ba   'bat'
