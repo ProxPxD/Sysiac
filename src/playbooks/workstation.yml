@@ -11,6 +11,7 @@
     - konsole
     - fish-shell
     - fcitx
+    - podman
     # Linux UI
     - virtual-desktops
     - shortcuts

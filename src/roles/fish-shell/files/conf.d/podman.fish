@@ -1,4 +1,3 @@
-# abbr -a -- docker  'podman'
 abbr -a -- dc      'docker compose'
 abbr -a -- dc0     'docker compose stop'
 abbr -a -- dc1     'docker compose start'
