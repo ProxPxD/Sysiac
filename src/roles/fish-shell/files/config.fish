@@ -104,55 +104,12 @@ alias wa      'nchat -d ~/.config/nchat-whatsapp'
 #################
 # Abbreviations #
 #################
-# fish
-abbr -a --position anywhere -- ficonf '$__fish_config_dir/config.fish'
-abbr -a --position anywhere -- fconf '$__fish_config_dir/config.fish'
-abbr -a -- vconf 'nvim $__fish_config_dir/config.fish'
-abbr -a -- vcong 'nvim $__fish_config_dir/config.fish'
-abbr -a -- vc    'nvim $__fish_config_dir/config.fish'
-abbr -a -- vcf   'nvim $__fish_config_dir/functions/'
-abbr -a -- vcfc  'nvim $__fish_config_dir/functions/conda.fish'
-abbr -a -- bconf 'bat $__fish_config_dir/config.fish'
-abbr -a -- bc    'bat $__fish_config_dir/config.fish'
-abbr -a -- bcg   'bat $__fish_config_dir/config.fish | grep'
-abbr -a -- bcgi  'bat $__fish_config_dir/config.fish | grep -i'
-abbr -a -- hc    'head $__fish_config_dir/config.fish'
-abbr -a -- bcf   'bat $__fish_config_dir/functions/'
-abbr -a -- bcfc  'bat $__fish_config_dir/functions/conda.fish'
-abbr -a --position anywhere -- !!  "(history | head -n1 | string split ' ' | tail -n +2 | string join ' ')"
-abbr -a --position anywhere -- !1  "(history | head -n1 | tail -n1 | string split ' ' | tail -n +2 | string join ' ')"
-abbr -a --position anywhere -- !2  "(history | head -n2 | tail -n1 | string split ' ' | tail -n +2 | string join ' ')"
-abbr -a -- lsf "lsd | grep -vE 'tide|prompt|fisher'"
 
 # environment.d
 abbr -a -- le  'lsd ~/.config/environment.d/'
 abbr -a -- ve  'nvim ~/.config/environment.d/'
 abbr -a -- be  'bat ~/.config/environment.d/'
 abbr -a --position anywhere -- envd  '~/.config/environment.d/'
-
-# ls(d)
-abbr -a -- ls     'lsd'
-abbr -a -- l      'lsd'
-abbr -a -- la     'lsd -A'
-abbr -a -- ll     'lsd -lh'
-abbr -a -- lla    'lsd -lhA'
-abbr -a -- lld    'lsd -lhd'
-abbr -a -- lwc    'lsd | wc'
-abbr -a -- lwcl   'lsd | wc -l'
-abbr -a -- lwcc   'lsd | wc -c'
-abbr -a -- lg     'lsd | grep'
-abbr -a -- lsg    'lsd | grep'
-abbr -a -- lgi    'lsd | grep -i'
-abbr -a -- lgv    'lsd | grep -v'
-abbr -a -- lgve   'lsd | grep -vE'
-abbr -a -- lgvi   'lsd | grep -vi'
-abbr -a -- lgiv   'lsd | grep -iv'
-abbr -a -- llg    'lsd -lh | grep'
-abbr -a -- llag   'lsd -lhA | grep'
-abbr -a -- lag    'lsd -A | grep'
-abbr -a -- lalg   'lsd -Alh | grep'
-abbr -a -- llgi   'lsd -lh | grep -i'
-abbr -a -- llgv   'lsd -lh | grep -v'
 
 # bat/cat/less
 abbr -a -- cat  'bat'
