@@ -228,6 +228,3 @@ set -Ux EDITOR $VISUAL
 abbr -a -- vi 'nvim'
 abbr -a -- v  'nvim'
 abbr -a -- sv 'sudo nvim'
-# mkdir
-abbr -a -- mk  'mkdir'
-abbr -a -- mkp 'mkdir -p'
