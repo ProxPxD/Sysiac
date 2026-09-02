@@ -2,17 +2,6 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-##############
-# Appearance #
-##############
-set -gx fish_color_autosuggestion brblack
-set -gx fish_color_command normal
-set -gx fish_color_comment brgreen
-set -gx fish_color_quote bryellow
-set -gx fish_color_param brgreen
-set -gx fish_color_cwd brblue
-set -gx fish_color_end brblue
-
 ########
 # Envs #
 ########
@@ -29,9 +18,6 @@ set -gx GBM_BACKEND nvidia-drm
 set -gx __GLX_VENDOR_LIBRARY_NAME nvidia
 set -gx MOZ_ENABLE_WAYLAND 1
 set -gx MOZ_WEBRENDER 1
-# podman
-set -gx CONTAINERS_COLOR 1
-set -gx DOCKER_HOST unix://$XDG_RUNTIME_DIR/podman/podman.sock
 # nchat
 set -gx NCHAT_CMAKEARGS "-DHAS_SIGNAL=ON"
 # ssh
