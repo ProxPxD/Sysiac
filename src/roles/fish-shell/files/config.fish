@@ -207,11 +207,6 @@ abbr -a --position anywhere -- \\gve  '| grep -vE'
 # zoxide
 set -Ux ZO_MAX_ENTRIES 10000
 set -Ux ZO_MAXAGE 1460  # 4 yers
-abbr -a -- cd   'z'
-abbr -a -- zq   'zoxide query -l'
-abbr -a -- zqa  'zoxide query -als'
-abbr -a -- zqag 'zoxide query -als | grep'
-abbr -a -- zr   'zoxide remove'
 
 # vim
 set -Ux VISUAL 'nvim'

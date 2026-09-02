@@ -1,0 +1,5 @@
+abbr -a -- cd   'z'
+abbr -a -- zq   'zoxide query -l'
+abbr -a -- zqa  'zoxide query -als'
+abbr -a -- zqag 'zoxide query -als | grep'
+abbr -a -- zr   'zoxide remove'
