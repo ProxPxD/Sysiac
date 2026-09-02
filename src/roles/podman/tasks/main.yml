@@ -4,7 +4,7 @@
     package_s: [podman, docker-compose]
   tags: [podman, app]
 
-- name: Install Podman and Related Tools
+- name: Set Podman Envs
   import_tasks: ../tasks/prepend-fish-conf.yml
   vars:
     filename: podman

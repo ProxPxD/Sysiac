@@ -93,7 +93,22 @@
     replace: '\1__execute_commands'
   tags: [fish, shell]
 
-- name: Add Fish Confs
+- name: Set Fish Envs
+  import_tasks: ../tasks/prepend-fish-conf.yml
+  vars:
+    filename: podman
+    blockname: colors
+    content: |
+      set -gx fish_color_autosuggestion brblack
+      set -gx fish_color_command normal
+      set -gx fish_color_comment brgreen
+      set -gx fish_color_quote bryellow
+      set -gx fish_color_param brgreen
+      set -gx fish_color_cwd brblue
+      set -gx fish_color_end brblue
+  tags: [fish, shell]
+
+- name: Add Apps Fish Confs
   blockinfile:
     path: '{{fish_path}}/conf.d/{{file | basename}}'
     create: true
