@@ -237,9 +237,3 @@ abbr -a -- wcc 'wc -c'
 abbr -a --position anywhere -- \\wc  '| wc'
 abbr -a --position anywhere -- \\wcl '| wc -l'
 abbr -a --position anywhere -- \\wcc '| wc -c'
-# yq (think how to solve with yay)
-abbr -a -- yamlq 'yq'
-abbr -a -- yamq  'yq'
-abbr -a -- yaq   'yq'
-abbr -a -- ymq   'yq'
-
