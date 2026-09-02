@@ -193,17 +193,7 @@ abbr -a --position anywhere -- \\less    '| less'
 abbr -a --position anywhere -- \\les     '| less'
 abbr -a --position anywhere -- \\le      '| less'
 abbr -a --position anywhere -- \\l       '| less'
-# grep
-abbr -a -- g   'grep'
-abbr -a -- gi  'grep -i'
-abbr -a -- ge  'grep -E'
-abbr -a -- gv  'grep -v'
-abbr -a -- gve 'grep -vE'
-abbr -a --position anywhere -- \\g    '| grep'
-abbr -a --position anywhere -- \\gi   '| grep -i'
-abbr -a --position anywhere -- \\ge   '| grep -E'
-abbr -a --position anywhere -- \\gv   '| grep -v'
-abbr -a --position anywhere -- \\gve  '| grep -vE'
+
 # zoxide
 set -Ux ZO_MAX_ENTRIES 10000
 set -Ux ZO_MAXAGE 1460  # 4 yers
