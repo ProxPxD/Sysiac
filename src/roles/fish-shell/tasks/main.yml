@@ -101,6 +101,7 @@
     marker: "# {mark} abbr"
     marker_begin: BEG
     marker_end: END
+    append_newline: true
     block: '{{lookup("file", file)}}'
   with_fileglob:
     - 'conf.d/*'

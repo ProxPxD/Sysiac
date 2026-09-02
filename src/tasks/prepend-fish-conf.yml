@@ -7,5 +7,6 @@
     marker: '# {mark} {{blockname | default("envs")}}'
     marker_begin: BEG
     marker_end: END
+    append_newline: true
     block: '{{content}}'
   tags: [fish, shell, conf]
