@@ -216,7 +216,3 @@ abbr -a -- zr   'zoxide remove'
 # vim
 set -Ux VISUAL 'nvim'
 set -Ux EDITOR $VISUAL
-
-abbr -a -- vi 'nvim'
-abbr -a -- v  'nvim'
-abbr -a -- sv 'sudo nvim'
