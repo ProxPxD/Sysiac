@@ -1,4 +1,3 @@
-# abbr
 abbr -a -- c       'conda'
 abbr -a -- co      'conda'
 abbr -a -- con     'conda'

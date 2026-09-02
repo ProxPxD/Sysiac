@@ -1,4 +1,3 @@
-# abbr
 abbr -a -- tsum    'timew summary'
 abbr -a -- t1      'timew start'
 abbr -a -- t0      'timew stop'

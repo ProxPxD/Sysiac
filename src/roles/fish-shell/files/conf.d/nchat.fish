@@ -1,4 +1,3 @@
-abbr
 abbr -a -- chat    'nchat'
 abbr -a -- nc      'nchat'
 abbr -a -- nch     'nchat -h'

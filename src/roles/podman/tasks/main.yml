@@ -2,7 +2,7 @@
   import_tasks: ../tasks/yay.yml
   vars:
     package_s: [podman, docker-compose]
-  tags: podman
+  tags: [podman, app]
 
 - name: Install Podman and Related Tools
   import_tasks: ../tasks/prepend-fish-conf.yml
@@ -11,4 +11,4 @@
     content: |
       set -gx CONTAINERS_COLOR 1
       set -gx DOCKER_HOST unix://$XDG_RUNTIME_DIR/podman/podman.sock
-  tags: podman
+  tags: [podman, app]

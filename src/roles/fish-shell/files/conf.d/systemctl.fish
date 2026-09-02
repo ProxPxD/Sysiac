@@ -1,4 +1,4 @@
-# abbr
+## system
 abbr -a -- sy     'systemctl'
 abbr -a -- sen    'systemctl enable'
 abbr -a -- senn   'systemctl enable --now'
@@ -10,7 +10,7 @@ abbr -a -- ss     'systemctl status'
 abbr -a -- sedi   'systemctl edit'
 abbr -a -- sdr    'sudo systemctl daemon-reload'
 abbr -a -- sc     'systemctl cat'
-# user
+## user
 abbr -a -- suen   'systemctl --user enable'
 abbr -a -- suenn  'systemctl --user enable --now'
 abbr -a -- sud    'systemctl --user disable'

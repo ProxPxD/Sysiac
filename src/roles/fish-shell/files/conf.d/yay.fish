@@ -1,4 +1,3 @@
-# abbr
 abbr -a -- pacman 'yay'
 abbr -a -- ya     'yay'
 abbr -a -- y      'yay'

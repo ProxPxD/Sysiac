@@ -4,7 +4,7 @@ schema:
     '?files':
       - {name: '<NAME>', '?path': '<PATH>'}
     '?dirs':
-      - {name: '<NAME>', '?path': '<PATH>'}
+      - {name: '<NAME>', '?path': '<PATH>',}
 
 confs:
   lsd:
@@ -18,7 +18,6 @@ confs:
     path: '{{user_path}}'
     files:
       - name: '.gitconfig'
-      - {name: git.fish, path: '{{fish_path}}/conf.d'}  
   ssh:
     path: '{{user_path}}/.ssh'
     files:
@@ -33,40 +32,3 @@ confs:
   yay:
     files:
       - name: config.json
-      - {name: yay.fish, path: '{{fish_path}}/conf.d'}
-  nchat:
-    files:
-      - {name: nchat.fish, path: '{{fish_path}}/conf.d'}
-  timew:
-    files:
-      - {name: timew.fish, path: '{{fish_path}}/conf.d'}
-  taskwarrior:
-    files:
-      - {name: taskwarrior.fish, path: '{{fish_path}}/conf.d'}
-  networking:
-    files:
-      - {name: networking.fish, path: '{{fish_path}}/conf.d'}
-  systemctl:
-    files:
-      - {name: systemctl.fish, path: '{{fish_path}}/conf.d'}
-  podman:
-    files:
-      - {name: podman.fish, path: '{{fish_path}}/conf.d'}
-  conda:
-    files:
-      - {name: conda.fish, path: '{{fish_path}}/conf.d'}
-  python:
-    files:
-      - {name: python.fish, path: '{{fish_path}}/conf.d'}
-  dolphin:
-    files:
-      - {name: dolphin.fish, path: '{{fish_path}}/conf.d'}
-  viu:
-    files:
-      - {name: viu.fish, path: '{{fish_path}}/conf.d'}
-  watch:
-    files:
-      - {name: watch.fish, path: '{{fish_path}}/conf.d'}
-  xdg-open:
-    files:
-      - {name: xdg-open.fish, path: '{{fish_path}}/conf.d'}

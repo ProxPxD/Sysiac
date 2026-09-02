@@ -1,4 +1,3 @@
-# abbr
 abbr -a -- tsk     'task'
 abbr -a -- tk      'task'
 abbr -a -- tl      'task peek'
