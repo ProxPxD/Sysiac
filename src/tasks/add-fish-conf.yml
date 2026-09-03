@@ -1,58 +1,28 @@
 ---
-- name: Add Fish Conf | Set paths | String
-  set_fact:
-    paths: ['{{file_s}}.fish']
-  when: (file_s | type_debug) == 'str'
-  tags: [facts, conf]
-
-- name: Set paths | File
-  set_fact:
-    paths: '{{file_s.src}}'
-  when:
-    - (file_s | type_debug) == 'dict'
-    - file_s.state == 'file'
-  tags: [facts, conf]
-
-- name: Set paths | Dictionary
-  set_fact:
-    paths: >-
-      {{
-        query('community.general.filetree', file_s.src)
-         | selectattr('state', 'eq', 'file')
-         | map(attribute='src')
-         | list
-      }}
-  when:
-    - (file_s | type_debug) == 'dict'
-    - file_s.state != 'ditionary'
-  tags: [facts, conf]
-
-- name: Add Fish Conf | Set Facts
+- name: Add Fish Conf | Set Facts ()
   set_fact:
     safe_pos: '{{pos | default("BOF")}}'
     safe_blockname: "{{blockname | default('envs')}}"
-
-- name: Add Fish Conf | Set Facts 1
-  set_fact:
-    paths: >-
+    files: >-
       {{
-        [file_s ~ '.fish'] if file_s is not mapping else
-        [file_s.src | string] if file_s.state == 'file' else
-        []
+        [file_s] if file_s is string or file_s.state == 'file' else
+        (query('community.general.filetree', file_s.src) | selectattr('state', 'eq', 'file'))
       }}
-  no_log: false
-  tags: [facts, conf]
+    paths: []
+  no_log: true
 
-        # (query('community.general.filetree', file_s.src)
-        # | selectattr('state', 'eq', 'file')
-        # | map(attribute='src')
-        # | list)
+- name: Add Fish Conf | Set Paths as Strings with .fish Ending
+  set_fact:
+    paths: "{{paths | default([]) + [item.src | default(item) | regex_replace('(?<!\\.fish)$', '.fish') ]}}"
+  loop: "{{files}}"
+  no_log: true
 
 - name: 'Add Fish Conf | Debug'
   debug:
     msg:
       - "file_s.src: {{file_s.src | default('no src')}}"
       - "paths: {{paths}}"
+      - "files: {{files}}"
   tags: [fish, shell]
 
 - name: Add Fish Conf | Add
