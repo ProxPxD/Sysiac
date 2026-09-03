@@ -1,5 +1,5 @@
 ---
-- name: yay |
+- name: yay | Install
   kewlfft.aur.aur:
     name: '{{package_s}}'
     state: present

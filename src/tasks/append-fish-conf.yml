@@ -1,10 +1,10 @@
 ---
-- name: Prepend Fish Conf |
+- name: Append Fish Conf |
   blockinfile:
     path: '{{fish_path}}/conf.d/{{filename}}.fish'
     create: true
-    insertbefore: BOF
-    marker: '# {mark} {{blockname | default("envs")}}'
+    insertafter: EOF
+    marker: '# {mark} {{blockname | default("abbr")}}'
     marker_begin: BEG
     marker_end: END
     append_newline: true

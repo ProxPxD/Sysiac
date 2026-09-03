@@ -4,6 +4,7 @@
   tags:
     - simple-apps
     - conf
+    - facts
 
 - name: establish-confs | Create Dir
   file:

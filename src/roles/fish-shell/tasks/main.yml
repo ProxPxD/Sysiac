@@ -94,9 +94,9 @@
   tags: [fish, shell]
 
 - name: Set Fish Envs
-  import_tasks: ../tasks/prepend-fish-conf.yml
+  include_tasks: ../tasks/add-fish-conf.yml
   vars:
-    filename: podman
+    file_s: fish
     blockname: colors
     content: |
       set -gx fish_color_autosuggestion brblack
@@ -108,18 +108,30 @@
       set -gx fish_color_end brblue
   tags: [fish, shell]
 
-- name: Add Apps Fish Confs
-  blockinfile:
-    path: '{{fish_path}}/conf.d/{{file | basename}}'
-    create: true
-    insertafter: EOF
-    marker: "# {mark} abbr"
-    marker_begin: BEG
-    marker_end: END
-    append_newline: true
-    block: '{{lookup("file", file)}}'
-  with_fileglob:
-    - 'conf.d/*'
+- name: Add Apps Fish Conf Per Type
+  include_tasks: ../tasks/add-fish-conf.yml
+  vars:
+    file_s: '{{file}}'
+    pos: EOF
+    blockname: '{{file | dirname | basename}}'
+  loop: "{{query('filetree', role_path ~ '/files/conf.d')}}"
   loop_control:
     loop_var: file
-  tags: [fish, shell, conf]
+  when: file.state == 'file'
+  tags: [fish, shell]
+
+# - name: Add Apps Fish Confs
+#   blockinfile:
+#     path: '{{fish_path}}/conf.d/{{file | basename}}'
+#     create: true
+#     insertafter: EOF
+#     marker: "# {mark} abbr"
+#     marker_begin: BEG
+#     marker_end: END
+#     append_newline: true
+#     block: '{{lookup("file", file)}}'
+#   with_fileglob:
+#     - 'conf.d/*'
+#   loop_control:
+#     loop_var: file
+#   tags: [fish, shell, conf]

@@ -5,9 +5,9 @@
   tags: [podman, app]
 
 - name: Set Podman Envs
-  import_tasks: ../tasks/prepend-fish-conf.yml
+  import_tasks: ../tasks/add-fish-conf.yml
   vars:
-    filename: podman
+    file_s: podman
     content: |
       set -gx CONTAINERS_COLOR 1
       set -gx DOCKER_HOST unix://$XDG_RUNTIME_DIR/podman/podman.sock

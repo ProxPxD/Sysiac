@@ -1,4 +1,3 @@
-abbr -a -- gg   'git'
 abbr -a -- gf   'git fetch'
 abbr -a -- ga   'git add'
 abbr -a -- gb   'git branch'
