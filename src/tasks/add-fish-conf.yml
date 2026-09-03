@@ -17,14 +17,6 @@
   loop: "{{files}}"
   no_log: true
 
-- name: 'Add Fish Conf | Debug'
-  debug:
-    msg:
-      - "file_s.src: {{file_s.src | default('no src')}}"
-      - "paths: {{paths}}"
-      - "files: {{files}}"
-  tags: [fish, shell]
-
 - name: Add Fish Conf | Add
   blockinfile:
     path: "{{fish_path}}/conf.d/{{path | basename}}"
