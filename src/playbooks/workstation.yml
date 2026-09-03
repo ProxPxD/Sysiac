@@ -9,7 +9,8 @@
     - printers
     - fonts
     - konsole
-    - fish-shell
+    - role: fish
+      tags: [fish, shell]
     - fcitx
     - podman
     # Linux UI

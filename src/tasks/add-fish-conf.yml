@@ -41,7 +41,7 @@
         []
       }}
   no_log: false
-  tags: [facts, conf,]
+  tags: [facts, conf]
 
         # (query('community.general.filetree', file_s.src)
         # | selectattr('state', 'eq', 'file')
