@@ -10,7 +10,7 @@
     - fonts
     - konsole
     - role: fish
-      tags: [fish, shell]
+      tags: [fish, shell, fishell]
     - fcitx
     - podman
     # Linux UI

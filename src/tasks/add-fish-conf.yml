@@ -51,22 +51,13 @@
 - name: 'Add Fish Conf | Debug'
   debug:
     msg:
-      - "file_s: {{file_s}}"
-      - "file_s type: {{file_s | type_debug}}"
-      - "is_string: {{file_s is string}}"
-      - "is_mapping: {{file_s is mapping}}"
-      # - "file_s_type: {{file_s_type}}"
-      # - "is_string: {{is_string}}"
-      # - "is_mapping: {{is_mapping}}"
       - "file_s.src: {{file_s.src | default('no src')}}"
       - "paths: {{paths}}"
-      # - "paths2: {{paths2}}"
-      - "fuck = {{[file_s ~ '.fish'] if file_s is string else [file_s.src] if file_s.src is file else query('filetree', file_s.src) | selectattr('state', 'eq', 'file') | map(attribute='src') | list}}"
   tags: [fish, shell]
 
 - name: Add Fish Conf | Add
   blockinfile:
-    path: "{{fish_path}}/conf.d/{{path}}"
+    path: "{{fish_path}}/conf.d/{{path | basename}}"
     create: true
     marker: '# {mark} {{safe_blockname}}'
     marker_begin: BEG

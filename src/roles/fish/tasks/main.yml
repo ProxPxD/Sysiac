@@ -113,7 +113,7 @@
   vars:
     file_s: '{{file}}'
     pos: EOF
-    blockname: '{{file | dirname | basename}}'
+    blockname: '{{file.src | dirname | basename}}'
   loop: "{{query('filetree', role_path ~ '/files/conf.d')}}"
   loop_control:
     loop_var: file
