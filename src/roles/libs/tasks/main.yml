@@ -10,5 +10,3 @@
       - bluez
       - bluez-utils
     state: present
-  tags:
-    - libs

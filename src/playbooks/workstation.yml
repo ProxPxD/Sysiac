@@ -2,26 +2,41 @@
   hosts: localhost
   connection: local
   roles:
-    - setup
+    - role: setup
+      tags: [setup]
     # Core/Common
-    - libs
-    - basic-tools
-    - printers
-    - fonts
-    - konsole
+    - role: libs
+      tags: [libs]
+    - role: basic-tools
+      tags: [basic-tools]
+    - role: printers
+      tags: [printers]
+    - role: fonts
+      tags: [fonts]
+    - role: konsole
+      tags: [konsole]
     - role: fish
       tags: [fish, shell]
     - role: fcitx
       tags: [fcitx]
-    - podman
+    - role: podman
+      tags: [podman]
     # Linux UI
-    - virtual-desktops
-    - shortcuts
+    - role: virtual-desktops
+      tags: [virtual-desktops]
+    - role: shortcuts
+      tags: [shortcuts]
     # Apps
-    - firefox
-    - obsidian
-    - simple-conf-apps
-    - dolphin
-    - bluetooth
+    - role: firefox
+      tags: [firefox]
+    - role: obsidian
+      tags: [obsidian]
+    - role: simple-conf-apps
+      tags: [simple-apps]
+    - role: dolphin
+      tags: [dolphin]
+    - role: bluetooth
+      tags: [bluetooth]
     # Own Creations
-    - own-repos
+    - role: own-repos
+      tags: [own-repos]

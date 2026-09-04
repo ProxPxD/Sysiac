@@ -6,8 +6,6 @@
     state: read
   register: dolphin_view_props
   changed_when: false
-  tags:
-    - dolphin
 
 - name: Enable hidden files in Dolphin
   command:
@@ -21,5 +19,3 @@
   when:
     - dolphin_view_props.xattr is defined
     - dolphin_view_props.xattr['user.kde.fm.viewproperties#1'] is not search('HiddenFilesShown=true')
-  tags:
-    - dolphin

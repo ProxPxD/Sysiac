@@ -4,5 +4,3 @@
     enabled: true
     state: started
   become: true
-  tags:
-    - bluetooth
