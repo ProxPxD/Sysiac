@@ -24,12 +24,6 @@
     mode: '0644'
     directory_mode: '0755'
 
-- name: Add Shell Conf
-  copy:
-    src: 'fcitx.fish'
-    dest: '{{fish_path}}/conf.d'
-    mode: '0644'
-    force: false
 - name: Set Fcitx Envs
   import_tasks: ../tasks/add-fish-conf.yml
   vars:
