@@ -1,4 +1,9 @@
 ---
+# file_s: string(extensionless if content) | fullpath to file | fullpath to directory
+# pos: 'EOF' | 'BOF'
+# content: file's content
+# blockname: what to put in the inserted blocks (default: envs)
+
 - name: Add Fish Conf | Set Facts ()
   set_fact:
     safe_pos: '{{pos | default("BOF")}}'
