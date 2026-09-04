@@ -33,7 +33,6 @@
     insertafter: "{{'EOF' if safe_pos == 'EOF' else omit}}"
     insertbefore: "{{'BOF' if safe_pos == 'BOF' else omit}}"
     block: "{{content if content is defined else lookup('file', path)}}"
-  tags: [fish, shell, conf]
   loop: '{{paths}}'
   loop_control:
     loop_var: path
