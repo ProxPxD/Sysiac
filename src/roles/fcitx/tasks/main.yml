@@ -40,3 +40,8 @@
     - fcitx
     - fish
     - shell
+
+- name: Set Fcitx Envs
+  import_tasks: ../tasks/add-fish-conf.yml
+  vars:
+    file_s: fcitx
