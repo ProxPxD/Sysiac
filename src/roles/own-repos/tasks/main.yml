@@ -3,8 +3,6 @@
     path: '{{prog_path}}'
     state: directory
     mode: '0755'
-  tags:
-    - own-repos
 
 - name: 'Create Symlinks'
   file:
@@ -14,8 +12,6 @@
   loop:
     - Desktop
     - Documents
-  tags:
-    - own-repos
 
 - name: 'Git Clone'
   include_tasks: clone-repo.yml
@@ -27,5 +23,3 @@
     - TestCore
   loop_control:
     loop_var: repo
-  tags:
-    - own-repos

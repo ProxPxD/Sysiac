@@ -4,31 +4,22 @@
     state: present
   become: true
   become_user: '{{linux_user}}'
-  tags:
-    - obsidian
-    - install
 
 - name: Create obsidian dir(s)
   file:
     path: '{{obsi_path}}'
     state: directory
     mode: "0755"
-  tags:
-    - obsidian
 
 - name: Check if obsidian repo already exists
   stat:
     path: '{{obsi_path}}/.git'
   register: obsi_git
-  tags:
-    - obsidian
 
 - name: Check if .obsidian  already exists
   stat:
     path: '{{obsi_path}}/.obsidian'
   register: obsi_dot
-  tags:
-    - obsidian
 
 - name: Clone repo
   git:
@@ -39,15 +30,9 @@
   become: true
   become_user: '{{linux_user}}'
   when: not obsi_git.stat.exists
-  tags:
-    - obsidian
-    - git
-    - clone
 
 - name: Re-establish .obsidian
   copy:
     src: .obsidian
     dest: '{{obsi_path}}'
   when: not obsi_dot.stat.exists
-  tags:
-    - obsidian

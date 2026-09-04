@@ -28,9 +28,6 @@
     state: present
   become: true
   become_user: '{{linux_user}}'
-  tags:
-    - install
-    - simple-apps
 
 - name: Install Apps via npm
   npm:
@@ -39,15 +36,9 @@
   become: true
   loop:
     - "@tagspaces/shell"
-  tags:
-    - install
-    - simple-apps
 
 - name: Create App Confs
   include_tasks: establish-confs.yml
   loop_control:
     loop_var: app
   loop: "{{confs | dict2items(key_name='name', value_name='conf')}}"
-  tags:
-    - conf
-    - simple-apps

@@ -7,8 +7,6 @@
       --group Desktops \
       --key Rows 3
   changed_when: false
-  tags:
-    - virtual-desktops
 
 - name: 'Name virtual desktops'
   shell: |
@@ -48,8 +46,6 @@
       --group Desktops \
       --key Name_9 ┏
   changed_when: false
-  tags:
-    - virtual-desktops
 
 - name: 'Turn wrapping arround on for virtual desktops'
   shell: |
@@ -57,8 +53,6 @@
       --group Windows \
       --key RollOverDesktops true
   changed_when: false
-  tags:
-    - virtual-desktops
 
 - name: 'Set virtual desktop name display time'
   shell: |
@@ -70,8 +64,6 @@
       --group Script-desktopchangeosd \
       --key PopupHideDelay 500
   changed_when: false
-  tags:
-    - virtual-desktops
 
 - name: Disable desktop layout indicator
   shell: |
@@ -79,11 +71,7 @@
       --group Script-desktopchangeosd \
       --key TextOnly true
   changed_when: false
-  tags:
-    - virtual-desktops
 
 - name: Reconfigure virtual desktops
   command: qdbus6 org.kde.KWin /KWin org.kde.KWin.reconfigure
   changed_when: false
-  tags:
-    - virtual-desktops

@@ -3,9 +3,6 @@
     src: profile.j2
     dest: '{{profile_path}}'
     mode: '0644'
-  tags:
-    - konsole
-    - profile
 
 - name: Set new Konsole profile default
   ini_file:
@@ -13,9 +10,6 @@
     section: Desktop Entry
     option: DefaultProfile
     value: '{{username}}.profile'
-  tags:
-    - konsole
-    - profile
 
 - name: Configure Konsole Font
   ini_file:
@@ -23,7 +17,3 @@
     section: 'Appearance'
     option: 'Font'
     value: 'Hack Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,,0,0'
-  tags:
-    - shell
-    - fish
-    - konsole
