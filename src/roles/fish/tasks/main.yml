@@ -2,14 +2,12 @@
   import_tasks: ../tasks/yay.yml
   vars:
     package_s: fish
-  tags: [fish, shell]
 
 - name: Establish Config
   copy:
     src: config.fish
     dest: '{{fish_path}}/config.fish'
     mode: '0644'
-  tags: [shell, fish, conf]
 
 - name: Add fish to valid shells
   lineinfile:
@@ -17,17 +15,12 @@
     line: /usr/bin/fish
     state: present
   become: true
-  tags: [shell, fish, establish]
 
 - name: Set fish as default shell
   user:
     name: '{{linux_user}}'
     shell: /usr/bin/fish
   become: true
-  tags:
-    - shell
-    - fish
-    - establish
 
 - name: Check if Fisher Exists
   stat:
@@ -35,7 +28,6 @@
   register: fisher
   failed_when: false
   changed_when: false
-  tags: [shell, fish, check]
 
 - name: Establish Fisher extension # noqa: command-instead-of-module
   shell: |
@@ -44,19 +36,16 @@
   args:
     executable: fish
   when: not fisher.stat.exists
-  tags: [shell, fish, establish]
 
 - name: Check if Tide exists
   command: fish -c 'type -q tide'
   register: is_tide
   failed_when: false
   changed_when: false
-  tags: [shell, fish, check]
 
 - name: Install Tide
   command: fish -c 'fisher install IlanCosman/tide@v6'
   when: is_tide.rc != 0
-  tags: [shell, fish, install]
 
 - name: Configure Tide
   shell: |
@@ -76,7 +65,6 @@
   args:
     executable: fish
   changed_when: false
-  tags: [shell, fish]
 
 - name: Add Functions
   copy:
@@ -84,14 +72,12 @@
     dest: '{{fish_path}}/functions/'
     mode: '0644'
     directory_mode: '0755'
-  tags: [fish, shell, conf]
 
 - name: Use custom command execution
   replace:
     path: '{{fish_path}}/functions/fish_prompt.fish'
     regexp: '^(bind .*)_tide_enter_transient$'
     replace: '\1__execute_commands'
-  tags: [fish, shell]
 
 - name: Set Fish Envs
   include_tasks: ../tasks/add-fish-conf.yml
@@ -106,8 +92,7 @@
       set -gx fish_color_param brgreen
       set -gx fish_color_cwd brblue
       set -gx fish_color_end brblue
-  tags: [fish, shell]
-
+  
 - name: Add Apps Fish Conf Per Type
   include_tasks: ../tasks/add-fish-conf.yml
   vars:
@@ -118,20 +103,3 @@
   loop_control:
     loop_var: file
   when: file.state == 'file'
-  tags: [fish, shell]
-
-# - name: Add Apps Fish Confs
-#   blockinfile:
-#     path: '{{fish_path}}/conf.d/{{file | basename}}'
-#     create: true
-#     insertafter: EOF
-#     marker: "# {mark} abbr"
-#     marker_begin: BEG
-#     marker_end: END
-#     append_newline: true
-#     block: '{{lookup("file", file)}}'
-#   with_fileglob:
-#     - 'conf.d/*'
-#   loop_control:
-#     loop_var: file
-#   tags: [fish, shell, conf]
