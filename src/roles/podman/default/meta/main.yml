@@ -1,2 +1,0 @@
-podman_container_path: '{{conf_path}}/containers'
-podman_podman_path: '/opt/podman'
