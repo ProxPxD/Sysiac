@@ -1,8 +1,8 @@
 - name: Allow NOPASSWD sudo for AUR package installation
   copy:
-    dest: '/etc/sudoers.d/{{ linux_user }}-pacman'
+    dest: '/etc/sudoers.d/{{linux_user}}-pacman'
     content: |
-      {{ linux_user }} ALL=(ALL) NOPASSWD: /usr/bin/pacman
+      {{linux_user}} ALL=(ALL) NOPASSWD: /usr/bin/pacman
     mode: "0440"
     validate: 'visudo -cf %s'
   become: true
