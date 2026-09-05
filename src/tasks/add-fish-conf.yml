@@ -1,12 +1,20 @@
 ---
 # file_s: string(extensionless if content) | fullpath to file | fullpath to directory
-# pos: 'EOF' | 'BOF'
-# content: file's content
+# pos: 'EOF' | 'BOF' (default: 'EOF')
 # blockname: what to put in the inserted blocks (default: envs)
+# content: file's content
+# after: insertafter RegEx (default: EOF)
+# before: insertbefore RegEx (default: BOF)
 
-- name: Add Fish Conf | Set Facts ()
+- name: Assert Arguments Not Conflicting
+  assert:
+    that:
+      - not (pos is defined and (after is defined or before is defined))
+      - not (after is defined and before is defined)
+
+- name: Add Fish Conf | Set Facts 1
   set_fact:
-    safe_pos: '{{pos | default("BOF")}}'
+    safe_pos: "{{pos | default(none)}}"
     safe_blockname: "{{blockname | default('envs')}}"
     files: >-
       {{
@@ -14,6 +22,15 @@
         (query('community.general.filetree', file_s.src) | selectattr('state', 'eq', 'file'))
       }}
     paths: []
+  no_log: true
+
+
+- name: Add Fish Conf | Set Facts 2
+  set_fact:
+    is_after: "{{after is defined or safe_pos == 'EOF' or before is not defined}}" # If nothing defined, will be after 'BOF'
+    is_before: "{{before is defined or safe_pos == 'BOF'}}"
+    save_after: "{{after | default('EOF')}}"
+    save_before: "{{before | default('BOF')}}"
   no_log: true
 
 - name: Add Fish Conf | Set Paths as Strings with .fish Ending
@@ -30,8 +47,9 @@
     marker_begin: BEG
     marker_end: END
     append_newline: true
-    insertafter: "{{'EOF' if safe_pos == 'EOF' else omit}}"
-    insertbefore: "{{'BOF' if safe_pos == 'BOF' else omit}}"
+    prepend_newline: true
+    insertafter: "{{save_after if is_after else omit}}"
+    insertbefore: "{{save_before if is_before else omit}}"
     block: "{{content if content is defined else lookup('file', path)}}"
   loop: '{{paths}}'
   loop_control:

@@ -54,10 +54,6 @@ function langcode
 end
 alias lc langcode
 #funcsave t
-###############
-#             #
-###############
-eval "$(zoxide init fish)"
 
 ################
 # Unix aliases #
@@ -123,10 +119,6 @@ abbr -a --position anywhere -- \\less    '| less'
 abbr -a --position anywhere -- \\les     '| less'
 abbr -a --position anywhere -- \\le      '| less'
 abbr -a --position anywhere -- \\l       '| less'
-
-# zoxide
-set -Ux ZO_MAX_ENTRIES 10000
-set -Ux ZO_MAXAGE 1460  # 4 yers
 
 # vim
 set -Ux VISUAL 'nvim'

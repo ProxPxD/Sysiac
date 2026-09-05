@@ -21,6 +21,8 @@
       tags: [fcitx]
     - role: podman
       tags: [podman]
+    - role: zoxide
+      tags: [zoxide]
     # Linux UI
     - role: virtual-desktops
       tags: [virtual-desktops]

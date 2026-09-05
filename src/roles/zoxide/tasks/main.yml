@@ -1,0 +1,22 @@
+- name: Install Zoxide
+  import_tasks: ../tasks/yay.yml
+  vars:
+    package_s: [zoxide]
+
+- name: Init Zoxide for Fish
+  include_tasks: ../tasks/add-fish-conf.yml
+  vars:
+    file_s: zoxide
+    blockname: 'init'
+    content: eval "$(zoxide init fish)"
+
+- name: Init Zoxide for Fish
+  include_tasks: ../tasks/add-fish-conf.yml
+  vars:
+    file_s: zoxide
+    blockname: 'envs'
+    after: '# END init'
+    content: |
+      set -gx ZO_MAX_ENTRIES 10000
+      set -gx ZO_MAXAGE 1460  # 4 years
+

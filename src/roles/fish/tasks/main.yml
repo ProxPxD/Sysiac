@@ -83,6 +83,7 @@
   include_tasks: ../tasks/add-fish-conf.yml
   vars:
     file_s: fish
+    pos: EOF
     blockname: colors
     content: |
       set -gx fish_color_autosuggestion brblack
@@ -92,7 +93,7 @@
       set -gx fish_color_param brgreen
       set -gx fish_color_cwd brblue
       set -gx fish_color_end brblue
-  
+
 - name: Add Apps Fish Conf Per Type
   include_tasks: ../tasks/add-fish-conf.yml
   vars:
