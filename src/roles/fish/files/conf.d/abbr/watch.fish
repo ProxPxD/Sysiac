@@ -1,10 +1,10 @@
 ## general
-abbr -a -- w1    'watch -n 1 -c'
+abbr -a -- w1    'hwatch -n 1 -p'
 ## podman
-abbr -a -- wpps  'watch -n1 -c podman ps -a'
-abbr -a -- wp    'watch -n1 -c podman ps -a'
-abbr -a -- wpl   'watch -n1 -c podman logs'
+abbr -a -- wpps  'hwatch -n1 -p podman ps -a'
+abbr -a -- wp    'hwatch -n1 -p podman ps -a'
+abbr -a -- wpl   'hwatch -n1 -p podman logs'
 ## lsd
-abbr -a -- wl    'watch -n1 -c lsd'
-abbr -a -- wls   'watch -n1 -c lsd'
-abbr -a -- wlsd  'watch -n1 -c lsd'
+abbr -a -- wl    'hwatch -n1 -p lsd'
+abbr -a -- wls   'hwatch -n1 -p lsd'
+abbr -a -- wlsd  'hwatch -n1 -p lsd'
