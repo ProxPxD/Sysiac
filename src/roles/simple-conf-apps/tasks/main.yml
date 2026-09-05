@@ -15,6 +15,7 @@
 
       - lsd
       - bat
+      - hwatch
       - git
       - neovim
       - yt-dlp
