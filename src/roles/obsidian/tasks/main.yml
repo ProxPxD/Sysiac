@@ -1,9 +1,7 @@
 - name: Install Obsidian
-  kewlfft.aur.aur:
-    name: obsidian
-    state: present
-  become: true
-  become_user: '{{linux_user}}'
+  import_tasks: ../tasks/yay.yml
+  vars:
+    package_s: obsidian
 
 - name: Create obsidian dir(s)
   file:

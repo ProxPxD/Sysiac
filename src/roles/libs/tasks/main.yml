@@ -1,6 +1,7 @@
-- name: Install libs
-  kewlfft.aur.aur:
-    name:
+- name: Install Libs
+  import_tasks: ../tasks/yay.yml
+  vars:
+    package_s:
       - glibc
       - lib32-glibc
       - libva
@@ -9,4 +10,3 @@
       - nerd-fonts-hack
       - bluez
       - bluez-utils
-    state: present
