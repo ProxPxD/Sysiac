@@ -37,6 +37,8 @@
       tags: [simple-apps]
     - role: dolphin
       tags: [dolphin]
+    - role: vaultwarden
+      tags: [vaultwarden]
     - role: bluetooth
       tags: [bluetooth]
     # Own Creations

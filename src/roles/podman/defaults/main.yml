@@ -1,2 +1,9 @@
 podman_containers_path: '{{conf_path}}/containers'
-podman_podman_path: '/opt/podman'
+podman_volume_path: '/opt/podman'
+
+podman:
+  apps:
+    vaultwarden:
+      containers:
+        server:
+           hport: 7000

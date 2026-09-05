@@ -1,8 +1,11 @@
-- name: Install Fonts
-  kewlfft.aur.aur:
-    name:
+- name: Install Basic Tools
+  import_tasks: ../tasks/yay.yml
+  vars:
+    package_s:
       - jq
       - yq
       - curl
       - node
       - npm
+      - mkcert
+      - nss

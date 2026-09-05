@@ -1,0 +1,44 @@
+- name: Create Podman Volume
+  file:
+    path: '{{vaultwarden_path}}/{{item}}/'
+    state: directory
+    mode: '0755'
+  loop:
+    - data
+    - ssl
+
+- name: Ensure mkcert local CA
+  block:
+    - name: Get mkcert CA path
+      command:
+        cmd: mkcert -CAROOT
+      register: mkcert_caroot
+      changed_when: false
+
+    - name: Install mkcert local CA
+      command:
+        cmd: mkcert -install
+        chdir: '{{vaultwarden_path}}'
+      when: not (mkcert_caroot.stdout | trim is directory)
+
+
+- name: Generate Vaultwarden certificate
+  command:
+    cmd: mkcert localhost 127.0.0.1 ::1
+    chdir: '{{vaultwarden_path}}/ssl'
+    creates: '{{vaultwarden_path}}/ssl/localhost+2.pem'
+
+- name: Run Vaultwarden container
+  containers.podman.podman_container:
+    name: vaultwarden
+    image: vaultwarden/server:latest
+    state: started
+    restart_policy: unless-stopped
+    ports:
+      - '127.0.0.1:{{hport}}:80'
+    volumes:
+      - '{{vaultwarden_path}}/data/:/data'
+      - '{{vaultwarden_path}}/ssl:/ssl:Z'
+    env:
+      DOMAIN: 'https://proxpxd.vaultwarden.pl'
+      ROCKET_TLS: '{certs="/ssl/localhost+2.pem",key="/ssl/localhost+2-key.pem"}'

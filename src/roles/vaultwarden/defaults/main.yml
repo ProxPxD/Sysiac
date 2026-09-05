@@ -1,0 +1,2 @@
+vaultwarden_path: '{{podman_volume_path}}/vaultwarden'
+hport: '{{podman.apps.vaultwarden.containers.server.hport}}'
