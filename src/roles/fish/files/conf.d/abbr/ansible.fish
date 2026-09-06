@@ -1,3 +1,3 @@
 ## specific
-#abbr -a -- anabbr  'z Sysiac; ansible-playbook  -K src/playbooks/workstation.yml -t abbr'
+abbr -a -- anfconf  'z Sysiac; ansible-playbook  -K src/playbooks/workstation.yml -t confd'
 
