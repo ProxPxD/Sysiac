@@ -12,6 +12,7 @@
       - fd
       - lolcat
       - renameutils
+      - brightnessctl
 
       - lsd
       - bat
