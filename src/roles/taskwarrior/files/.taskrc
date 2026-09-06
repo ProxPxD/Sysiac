@@ -1,0 +1,71 @@
+# [Created by task 3.4.2 11/13/2025 12:34:15]
+data.location=/home/proxpxd/.task
+news.version=3.4.2
+
+# To use the default location of the XDG directories,
+# move this configuration file from ~/.taskrc to ~/.config/task/taskrc and update location config as follows:
+
+#data.location=~/.local/share/task
+#hooks.location=~/.config/task/hooks
+
+# Color theme (uncomment one to use)
+#include light-16.theme
+#include light-256.theme
+#include bubblegum-256.theme
+#include dark-16.theme
+#include dark-256.theme
+#include dark-red-256.theme
+#include dark-green-256.theme
+include dark-blue-256.theme
+#include dark-violets-256.theme
+#include dark-yellow-green.theme
+#include dark-gray-256.theme
+#include dark-gray-blue-256.theme
+#include solarized-dark-256.theme
+#include solarized-light-256.theme
+#include no-color.theme
+
+alias.rm=delete
+alias.remove=delete
+weekstart=monday
+report.peek.description=Simple perso task report
+report.peek.columns=id,description.count,depends,tags,scheduled.relative,due.relative,start.age,urgency
+report.peek.labels=ID,Desc,D,Tags,Sch,Due,Act,Urg
+report.peek.sort=start-,depCount+,urgency-
+report.peek.filter=status:pending -WAITING limit:page -private +READY
+report.view.description=Bigger perso task report
+report.view.columns=id,description,depends,tags,scheduled,due,recur,start.age,depCount,urgency
+report.view.labels=ID,Desc,D,Tags,Sch,Due,Rec,Act,ND,Urg
+report.view.sort=start-,depCount+,urgency-
+report.view.filter=status:pending -WAITING -private
+default.command=peek
+uda.for.type=string
+uda.for.label=For
+uda.depCount.type=string
+uda.depCount.label=DepCount
+
+color.calendar.overdue=white on color52
+color.calendar.due=white on color124
+color.calendar.due.today=white on color134
+color.calendar.weekend=white on color17
+color.calendar.scheduled=white on color125
+color.blocked=rgb005
+color.blocking=rgb115
+color.completed=rgb050
+urgency.user.tag.game.coefficient=-8
+urgency.user.tag.security.coefficient=9
+urgency.user.tag.obsi.coefficient=1
+urgency.user.tag.prog.coefficient=2
+urgency.user.tag.ai.coefficient=3
+urgency.user.tag.system.coefficient=6
+report.ls.columns=id,start.active,description.count,depends.indicator,project,tags,recur.indicator,wait.remaining,scheduled.countdown,due.countdown,until.countdown
+report.list.columns=id,start.age,entry.age,description.count,depends.indicator,priority,project,tags,recur.indicator,scheduled.countdown,due,until.remaining,urgency
+report.ls.labels=ID,A,Descr,D,Project,Tags,R,Wait,S,Due,Until
+report.list.labels=ID,Active,Age,Descr,D,P,Project,Tags,R,Sch,Due,Until,Urg
+urgency.blocking.coefficient=1.5
+urgency.user.tag.bug.coefficient=2
+alias.rem=delete
+search.case.sensitive=0
+urgency.user.tag.easy.coefficient=-0.5
+urgency.user.tag.feature.coefficient=1
+alias.math=calc

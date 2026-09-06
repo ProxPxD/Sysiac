@@ -37,6 +37,8 @@
       tags: [simple-apps]
     - role: dolphin
       tags: [dolphin]
+    - role: taskwarrior
+      tags: [taskwarrior]
     - role: vaultwarden
       tags: [vaultwarden]
     - role: bluetooth

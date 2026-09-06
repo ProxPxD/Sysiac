@@ -23,9 +23,6 @@
   loop_control:
     loop_var: file
   loop: '{{ app.conf.files | default([]) }}'
-  tags:
-    - simple-apps
-    - conf
 
 - name: establish-confs | Copy Dir Confs
   copy:

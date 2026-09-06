@@ -25,8 +25,6 @@
     dest: '{{obsi_path}}'
     key_file: '{{git_ssh_key}}'
     accept_hostkey: true
-  become: true
-  become_user: '{{linux_user}}'
   when: not obsi_git.stat.exists
 
 - name: Re-establish .obsidian

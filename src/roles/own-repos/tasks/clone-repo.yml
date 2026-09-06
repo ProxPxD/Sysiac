@@ -4,21 +4,13 @@
   register: repo_git
   failed_when: false
   changed_when: false
-  tags:
-    - own-repos
 
 - name: 'clone-repo | Git Clone {{repo}}'
   git:
     repo: 'git@github.com:{{git_username}}/{{repo}}.git'
     dest: '{{prog_path}}/{{repo}}'
     accept_hostkey: true
-    # key_file: '{{git_ssh_key}}'
-  become: true
-  become_user: '{{linux_user}}'
+    key_file: '{{git_ssh_key}}'
   when: not repo_git.stat.exists
   environment:
-    SSH_AUTH_SOCK: "{{ lookup('env', 'SSH_AUTH_SOCK') }}"
-  tags:
-    - own-repos
-    - git
-    - clone
+    SSH_AUTH_SOCK: "{{lookup('env', 'SSH_AUTH_SOCK')}}"

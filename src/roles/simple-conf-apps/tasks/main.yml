@@ -21,6 +21,7 @@
       - yt-dlp
       - yt-dlp-ejs
       - uv
+      - timew
 
       - libreoffice-still
       - gimp

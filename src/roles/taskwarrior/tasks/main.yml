@@ -1,0 +1,26 @@
+- name: Install Taskwarrior
+  import_tasks: ../tasks/yay.yml
+  vars:
+    package_s: task
+
+- name: Conf Up
+  copy:
+    src: '.taskrc'
+    dest: '{{user_path}}/.taskrc'
+    mode: '0644'
+
+
+- name: Re-establish DB
+  copy:
+    src: 'taskchampion.sqlite3'
+    dest: '{{user_path}}/.task/'
+    mode: '0644'
+
+- name: Clone Hooks
+  git:
+    repo: 'git@github.com:{{git_username}}/Task-Warior-Hooks.git'
+    dest: '{{user_path}}/.task/.hooks'
+    key_file: '{{git_ssh_key}}'
+    accept_hostkey: true
+    update: true
+
