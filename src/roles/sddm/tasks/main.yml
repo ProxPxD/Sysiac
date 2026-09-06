@@ -1,0 +1,13 @@
+- name: Configure Faillock Count
+  lineinfile:
+    path: '{{faillock_path}}'
+    regexp: '^\s*deny\s*='
+    line: 'deny = 5'
+  become: true
+
+- name: Configure Faillock Unlock Time
+  lineinfile:
+    path: '{{faillock_path}}'
+    regexp: '^\s*unlock_time\s*='
+    line: 'unlock_time = 300'
+  become: true
