@@ -28,6 +28,7 @@
       - gparted
       - telegram-desktop-bin
       - signal-desktop-beta-bin
+      - inkscape-bin
     state: present
   become: true
   become_user: '{{linux_user}}'
