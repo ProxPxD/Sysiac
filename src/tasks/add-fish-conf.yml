@@ -6,38 +6,39 @@
 # after: insertafter RegEx (default: EOF)
 # before: insertbefore RegEx (default: BOF)
 
-- name: Assert Arguments Not Conflicting
-  assert:
-    that:
-      - not (pos is defined and (after is defined or before is defined))
-      - not (after is defined and before is defined)
-
-- name: Add Fish Conf | Set Facts 1
-  set_fact:
-    safe_pos: "{{pos | default(none)}}"
-    safe_blockname: "{{blockname | default('envs')}}"
-    files: >-
-      {{
-        [file_s] if file_s is string or file_s.state == 'file' else
-        (query('community.general.filetree', file_s.src) | selectattr('state', 'eq', 'file'))
-      }}
-    paths: []
+- name: Assertions and Facts
   no_log: true
+  block:
+  - name: Assert Arguments Not Conflicting
+    assert:
+      that:
+        - not (pos is defined and (after is defined or before is defined))
+        - not (after is defined and before is defined)
+
+  - name: Add Fish Conf | Set Facts 1
+    set_fact:
+      safe_pos: "{{pos | default(none)}}"
+      safe_blockname: "{{blockname | default('envs')}}"
+      files: >-
+        {{
+          [file_s] if file_s is string or file_s.state == 'file' else
+          (query('community.general.filetree', file_s.src) | selectattr('state', 'eq', 'file'))
+        }}
+      paths: []
 
 
-- name: Add Fish Conf | Set Facts 2
-  set_fact:
-    is_after: "{{after is defined or safe_pos == 'EOF' or before is not defined}}" # If nothing defined, will be after 'BOF'
-    is_before: "{{before is defined or safe_pos == 'BOF'}}"
-    save_after: "{{after | default('EOF')}}"
-    save_before: "{{before | default('BOF')}}"
-  no_log: true
+  - name: Add Fish Conf | Set Facts 2
+    set_fact:
+      is_after: "{{after is defined or safe_pos == 'EOF' or before is not defined}}" # If nothing defined, will be after 'BOF'
+      is_before: "{{before is defined or safe_pos == 'BOF'}}"
+      save_after: "{{after | default('EOF')}}"
+      save_before: "{{before | default('BOF')}}"
 
-- name: Add Fish Conf | Set Paths as Strings with .fish Ending
-  set_fact:
-    paths: "{{paths | default([]) + [item.src | default(item) | regex_replace('(?<!\\.fish)$', '.fish') ]}}"
-  loop: "{{files}}"
-  no_log: true
+  - name: Add Fish Conf | Set Paths as Strings with .fish Ending
+    set_fact:
+      paths: "{{paths | default([]) + [item.src | default(item) | regex_replace('(?<!\\.fish)$', '.fish') ]}}"
+    loop: "{{files}}"
+
 
 - name: Add Fish Conf | Add
   blockinfile:
