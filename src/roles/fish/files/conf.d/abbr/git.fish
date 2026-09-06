@@ -14,4 +14,4 @@ abbr -a -- gst    'git switch -t'
 abbr -a -- gu     'git push'
 abbr -a -- gd     'git pull'
 ## specific
-abbr -a -- gabbr  "z ~/Programs/Sysiac; git commit -am 'abbr'; git push"
+abbr -a -- gabbr  "z Sysiac; git commit -am 'abbr'; git push; ansible-playbook -K src/playbooks/workstation.yml -t abbr"

@@ -1,3 +1,4 @@
+## general
 abbr -a -- pacman 'yay'
 abbr -a -- ya     'yay'
 abbr -a -- y      'yay'
@@ -12,3 +13,5 @@ abbr -a -- yu     'yay -Syu --noconfirm --sudoloop'
 abbr -a -- yyu    'yay -Syu --noconfirm --sudoloop'
 abbr -a -- yr     'yay -Rns'
 abbr -a -- yh     'yay -h'
+## specific
+abbr -a -- ybin   'yay -Qme | cut -d' ' -f1 | xargs -IX yay -Ss X-bin'
