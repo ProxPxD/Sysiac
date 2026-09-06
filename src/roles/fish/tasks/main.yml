@@ -95,7 +95,10 @@
       set -gx fish_color_end brblue
 
 - name: Add Apps Fish Conf Per Type
-  include_tasks: ../tasks/add-fish-conf.yml
+  include_tasks:
+    file: ../tasks/add-fish-conf.yml
+    apply:
+      tags: [fish, confd]
   vars:
     file_s: '{{file}}'
     pos: EOF
@@ -104,4 +107,4 @@
   loop_control:
     loop_var: file
   when: file.state == 'file'
-  tags: [abbr]
+  tags: [fish, confd]
