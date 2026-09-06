@@ -3,7 +3,7 @@
     name:
       - viu
       - fzf
-      - cheat
+      - cheat-bin
       - zip
       - lsof
       - gzip
@@ -16,7 +16,7 @@
 
       - lsd
       - bat
-      - hwatch
+      - hwatch-bin
       - git
       - neovim
       - yt-dlp
