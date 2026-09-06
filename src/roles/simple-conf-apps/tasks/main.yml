@@ -24,6 +24,8 @@
       - uv
       - timew
 
+      - borg
+      - pika-backup
       - libreoffice-still
       - gimp
       - gparted
