@@ -43,8 +43,11 @@
       tags: [taskwarrior]
     - role: vaultwarden
       tags: [vaultwarden]
+    # ~Utilities
     - role: bluetooth
       tags: [bluetooth]
+    - role: nvidia-conf
+      tags: [nvidia-conf]
     # Own Creations
     - role: own-repos
       tags: [own-repos]

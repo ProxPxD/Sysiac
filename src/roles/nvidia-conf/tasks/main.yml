@@ -1,0 +1,23 @@
+- name: Install envycontrol
+  import_tasks: ../tasks/yay.yml
+  vars:
+    package_s: envycontrol
+
+- name: Check current EnvyControl mode
+  command: envycontrol --query
+  register: envycontrol_status
+  changed_when: false
+
+- name: Allow envycontrol Control Nvidia
+  command:
+    cmd: envycontrol -s nvidia
+  become: true
+  when: envycontrol_status.stdout | trim != 'nvidia'
+
+- name: Enable Kernel Mode Setting (KMS)
+  lineinfile:
+    path: /etc/modprobe.d/nvidia.conf
+    regexp: '^options nvidia_drm modeset=.*'
+    line: options nvidia_drm modeset=1
+  become: true
+
