@@ -1,0 +1,107 @@
+[Groups/0]
+# Group Name
+Name=Base
+# Layout
+Default Layout=pl
+# Default Input Method
+DefaultIM=pinyin
+
+[Groups/0/Items/0]
+# Name
+Name=keyboard-pl
+# Layout
+# Layout=
+
+[Groups/0/Items/1]
+# Name
+Name=keyboard-es
+# Layout
+# Layout=
+
+[Groups/0/Items/2]
+# Name
+Name=keyboard-epo
+# Layout
+# Layout=
+
+[Groups/0/Items/3]
+# Name
+Name=pinyin
+# Layout
+# Layout=
+
+[Groups/0/Items/4]
+# Name
+Name=keyboard-fr
+# Layout
+# Layout=
+
+[Groups/0/Items/5]
+# Name
+Name=keyboard-de-us
+# Layout
+# Layout=
+
+[Groups/0/Items/6]
+# Name
+Name=keyboard-ru-ruu
+# Layout
+# Layout=
+
+[Groups/0/Items/7]
+# Name
+Name=keyboard-se
+# Layout
+# Layout=
+
+[Groups/1]
+# Group Name
+Name=Asian
+# Layout
+Default Layout=cn-altgr-pinyin
+# Default Input Method
+DefaultIM=keyboard-cn-altgr-pinyin
+
+[Groups/1/Items/0]
+# Name
+Name=pinyin
+# Layout
+# Layout=
+
+[Groups/1/Items/1]
+# Name
+Name=keyboard-cn-altgr-pinyin
+# Layout
+# Layout=
+
+[Groups/2]
+# Group Name
+Name=Special
+# Layout
+Default Layout=trans
+# Default Input Method
+DefaultIM=keyboard-trans-qwerty
+
+[Groups/2/Items/0]
+# Name
+Name=keyboard-trans
+# Layout
+# Layout=
+
+[Groups/2/Items/1]
+# Name
+Name=keyboard-gr
+# Layout
+# Layout=
+
+[Groups/2/Items/2]
+# Name
+Name=keyboard-trans-qwerty
+# Layout
+# Layout=
+
+[GroupOrder]
+0=Base
+1=Asian
+2=Special
+
