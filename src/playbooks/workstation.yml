@@ -11,6 +11,9 @@
       tags: [basic-tools]
     - role: printers
       tags: [printers]
+    - role: ssl
+      tags: [ssl]
+    # Simple
     - role: fonts
       tags: [fonts]
     - role: konsole

@@ -1,0 +1,13 @@
+- name: 'Prepare Dir'
+  file:
+    path: '{{dir.path}}'
+    state: directory
+    mode: "{{path.mode | default('0755')}}"
+  loop_control:
+    loop_var: dir
+    label: '{{dir.path}}'
+  loop:
+    - {path: '{{ssl_path}}'}
+    - {path: '{{ssl_path}}/certs'}
+    - {path: '{{ssl_path}}/private', mode: '0710'}
+
