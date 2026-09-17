@@ -4,7 +4,7 @@ schema:
     '?files':
       - {name: '<NAME>', '?path': '<PATH>'}
     '?dirs':
-      - {name: '<NAME>', '?path': '<PATH>',}
+      - {name: '<NAME>', '?path': '<PATH>'}
 
 confs:
   lsd:

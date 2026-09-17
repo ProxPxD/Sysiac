@@ -13,25 +13,25 @@
 
 - name: 'Prepare Containers Dir'
   block:
-  - name: Create Containers Dir
-    file:
-      path: '{{podman_containers_path}}'
-      state: directory
-      mode: '0755'
+    - name: Create Containers Dir
+      file:
+        path: '{{podman_containers_path}}'
+        state: directory
+        mode: '0755'
 
-  - name: Conf registries.conf
-    copy:
-      dest: '{{podman_containers_path}}/registries.conf'
-      mode: '0644'
-      content: unqualified-search-registries = ["docker.io"]
+    - name: Conf registries.conf
+      copy:
+        dest: '{{podman_containers_path}}/registries.conf'
+        mode: '0644'
+        content: unqualified-search-registries = ["docker.io"]
 
-  - name: Conf containers.conf
-    copy:
-      dest: '{{podman_containers_path}}/containers.conf'
-      mode: '0644'
-      content: |
-        [engine]
-        compose_warning_logs=false
+    - name: Conf containers.conf
+      copy:
+        dest: '{{podman_containers_path}}/containers.conf'
+        mode: '0644'
+        content: |
+          [engine]
+          compose_warning_logs=false
 
 - name: Prepare Podman Dir
   block:
@@ -50,13 +50,13 @@
       register: podman_path_stat
 
     - name: Set Podman namespace ownership
-      block:
-      - name: Podman Unshare
-        command:
-          cmd: 'podman unshare chown -R 0:0 {{podman_volume_path}}'
-
-      - name: Create Namespace Ownership Marker
-        file:
-          path: '{{podman_volume_path}}/.namespace-owned'
-          state: touch
       when: not podman_path_stat.stat.exists
+      block:
+        - name: Podman Unshare
+          command:
+            cmd: 'podman unshare chown -R 0:0 {{podman_volume_path}}'
+
+        - name: Create Namespace Ownership Marker
+          file:
+            path: '{{podman_volume_path}}/.namespace-owned'
+            state: touch

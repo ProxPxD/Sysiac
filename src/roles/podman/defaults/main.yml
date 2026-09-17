@@ -6,4 +6,4 @@ podman:
     vaultwarden:
       containers:
         server:
-           hport: 7000
+          hport: 7000

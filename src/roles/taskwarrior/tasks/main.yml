@@ -23,4 +23,3 @@
     key_file: '{{git_ssh_key}}'
     accept_hostkey: true
     update: true
-

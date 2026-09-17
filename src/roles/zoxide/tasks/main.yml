@@ -19,4 +19,3 @@
     content: |
       set -gx ZO_MAX_ENTRIES 10000
       set -gx ZO_MAXAGE 1460  # 4 years
-

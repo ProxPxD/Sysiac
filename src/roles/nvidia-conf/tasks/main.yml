@@ -20,4 +20,3 @@
     regexp: '^options nvidia_drm modeset=.*'
     line: options nvidia_drm modeset=1
   become: true
-
