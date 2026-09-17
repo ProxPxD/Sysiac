@@ -1,7 +1,13 @@
 - name: Install Podman and Related Tools
   import_tasks: ../tasks/yay.yml
   vars:
-    package_s: [podman, docker-compose]
+    package_s:
+      - podman
+      - docker-compose
+      - podman-dnsname
+      - slirp4netns
+      - crun
+      - firewalld
 
 - name: Set Podman Envs
   import_tasks: ../tasks/add-fish-conf.yml
