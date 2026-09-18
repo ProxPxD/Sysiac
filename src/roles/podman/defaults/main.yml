@@ -1,6 +1,9 @@
 podman_containers_path: '{{conf_path}}/containers'
 podman_volume_path: '/opt/podman'
 
+############################
+# Central Podman Structure #
+############################
 podman:
   apps:
     vaultwarden:
