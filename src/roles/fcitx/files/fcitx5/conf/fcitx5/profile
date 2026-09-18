@@ -50,7 +50,7 @@ Name=Base
 # Layout
 Default Layout=pl
 # Default Input Method
-DefaultIM=keyboard-se
+DefaultIM=keyboard-de-us
 
 [Groups/2/Items/0]
 # Name
