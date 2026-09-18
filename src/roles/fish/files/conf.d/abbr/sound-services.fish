@@ -1,1 +1,1 @@
-abbr -a -- resound'systemctl --user restart wireplumber pipewire pipewire-pulse'
+abbr -a -- resound 'systemctl --user restart wireplumber pipewire pipewire-pulse'
