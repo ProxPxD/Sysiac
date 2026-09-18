@@ -10,4 +10,3 @@
     - {path: '{{ssl_path}}'}
     - {path: '{{ssl_path}}/certs'}
     - {path: '{{ssl_path}}/private', mode: '0710'}
-
