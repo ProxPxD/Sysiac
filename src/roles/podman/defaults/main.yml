@@ -1,10 +1,20 @@
-podman_containers_path: '{{conf_path}}/containers'
-podman_volume_path: '/opt/podman'
+containers_path: '{{conf_path}}/containers'
 
 ############################
 # Central Podman Structure #
 ############################
 podman:
+  conf:
+    envs:
+      color: 1
+    registries:
+      unqualifieds: ['docker.io']
+    compose:
+      warning_logs: false
+  paths:
+    mounts: '/opt/podman'
+    containers: '{{containers_path}}'
+      # volume:
   apps:
     vaultwarden:
       containers:
