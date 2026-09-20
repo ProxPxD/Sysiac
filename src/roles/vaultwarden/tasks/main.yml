@@ -24,8 +24,7 @@
 
 - name: Generate Vaultwarden certificate
   command:
-    cmd: mkcert localhost 127.0.0.1 ::1
-    # mkcert -cert-file localhost.pem -key-file localhost-key.pem localhost 127.0.0.1 ::1
+    cmd: mkcert -cert-file localhost.pem -key-file localhost-key.pem localhost 127.0.0.1 ::1
     chdir: '{{vaultwarden_path}}/ssl'
     creates: '{{vaultwarden_path}}/ssl/localhost+2.pem'
 
