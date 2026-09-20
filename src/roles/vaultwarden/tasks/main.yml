@@ -1,4 +1,4 @@
-- name: Create Podman Volume
+- name: Create Podman Mounts
   file:
     path: '{{vaultwarden_path}}/{{item}}/'
     state: directory
