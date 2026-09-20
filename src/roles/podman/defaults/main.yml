@@ -1,5 +1,12 @@
 containers_path: '{{conf_path}}/containers'
 
+base_paths:
+  mounts: '/opt/podman'
+  containers: '{{containers_path}}'
+mount_paths:
+  vaultwarden_mount: '{{base_paths.mounts}}/vaultwarden'
+paths: '{{base_paths | combine(mount_paths)}}'
+
 ############################
 # Central Podman Structure #
 ############################
@@ -11,12 +18,15 @@ podman:
       unqualifieds: ['docker.io']
     compose:
       warning_logs: false
-  paths:
-    mounts: '/opt/podman'
-    containers: '{{containers_path}}'
-      # volume:
+  paths: '{{paths}}'
   apps:
     vaultwarden:
-      containers:
+      services:
         server:
-          hport: 7000
+          image: vaultwarden/server:latest
+          container_name: vaultwarden
+          ports: [127.0.0.1:7000:80]
+          restart: unless-stopped
+          volumes:
+          - '{{paths.vaultwarden_mount}}/data/:/data'
+          - '{{paths.vaultwarden_mount}}/ssl:/ssl:Z'
