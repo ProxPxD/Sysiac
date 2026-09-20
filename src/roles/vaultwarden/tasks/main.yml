@@ -18,14 +18,16 @@
     - name: Install mkcert local CA
       command:
         cmd: mkcert -install
-        chdir: '{{vaultwarden_path}}'
       when: not (mkcert_caroot.stdout | trim is directory)
-
 
 - name: Generate Vaultwarden certificate
   command:
-    cmd: mkcert -cert-file localhost.pem -key-file localhost-key.pem localhost 127.0.0.1 ::1
     chdir: '{{vaultwarden_path}}/ssl'
+    cmd: >
+      mkcert
+        -cert-file localhost.pem
+        -key-file localhost-key.pem
+        localhost 127.0.0.1 ::1
     creates: '{{vaultwarden_path}}/ssl/localhost.pem'
 
 - name: Run Vaultwarden container
