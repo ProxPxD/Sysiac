@@ -28,5 +28,8 @@ podman:
           ports: [127.0.0.1:7000:80]
           restart: unless-stopped
           volumes:
-          - '{{paths.vaultwarden_mount}}/data/:/data'
-          - '{{paths.vaultwarden_mount}}/ssl:/ssl:Z'
+            - '{{paths.vaultwarden_mount}}/data/:/data'
+            - '{{paths.vaultwarden_mount}}/ssl:/ssl:Z'
+          environment:
+            DOMAIN: 'https://proxpxd.vaultwarden.pl'
+            ROCKET_TLS: '{certs="/ssl/localhost.pem",key="/ssl/localhost-key.pem"}'
