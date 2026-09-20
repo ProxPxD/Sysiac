@@ -26,7 +26,7 @@
   command:
     cmd: mkcert -cert-file localhost.pem -key-file localhost-key.pem localhost 127.0.0.1 ::1
     chdir: '{{vaultwarden_path}}/ssl'
-    creates: '{{vaultwarden_path}}/ssl/localhost+2.pem'
+    creates: '{{vaultwarden_path}}/ssl/localhost.pem'
 
 - name: Run Vaultwarden container
   containers.podman.podman_container:
@@ -41,4 +41,4 @@
       - '{{vaultwarden_path}}/ssl:/ssl:Z'
     env:
       DOMAIN: 'https://proxpxd.vaultwarden.pl'
-      ROCKET_TLS: '{certs="/ssl/localhost+2.pem",key="/ssl/localhost+2-key.pem"}'
+      ROCKET_TLS: '{certs="/ssl/localhost.pem",key="/ssl/localhost-key.pem"}'
