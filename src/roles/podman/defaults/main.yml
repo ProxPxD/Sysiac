@@ -1,11 +1,12 @@
 containers_path: '{{conf_path}}/containers'
 
 base_paths:
+  containers: '{{conf_path}}/containers'
   mounts: '/opt/podman'
-  containers: '{{containers_path}}'
-mount_paths:
+derivated_paths:
+  containers_systemd: '{{containers_path}}/systemd'
   vaultwarden_mount: '{{base_paths.mounts}}/vaultwarden'
-paths: '{{base_paths | combine(mount_paths)}}'
+all_paths: '{{base_paths | combine(derivated_paths)}}'
 
 ############################
 # Central Podman Structure #
@@ -18,7 +19,7 @@ podman:
       unqualifieds: ['docker.io']
     compose:
       warning_logs: false
-  paths: '{{paths}}'
+  paths: '{{all_paths}}'
   apps:
     vaultwarden:
       services:

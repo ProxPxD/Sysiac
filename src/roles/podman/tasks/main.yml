@@ -38,7 +38,7 @@
         mode: '0644'
         content: |
           [engine]
-          compose_warning_logs={{podman.conf.compose.warning_logs}}
+          compose_warning_logs={{podman.conf.compose.warning_logs | lower}}
 
 - name: Prepare Podman Dir
   block:

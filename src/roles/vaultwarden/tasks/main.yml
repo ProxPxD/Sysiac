@@ -1,6 +1,6 @@
 - name: Create Podman Mounts
   file:
-    path: '{{vaultwarden_path}}/{{item}}/'
+    path: '{{podman.paths.vaultwarden_mount}}/{{item}}/'
     state: directory
     mode: '0755'
   loop:
@@ -22,13 +22,13 @@
 
 - name: Generate Vaultwarden certificate
   command:
-    chdir: '{{vaultwarden_path}}/ssl'
+    chdir: '{{podman.paths.vaultwarden_mount}}/ssl'
     cmd: >
       mkcert
         -cert-file localhost.pem
         -key-file localhost-key.pem
         localhost 127.0.0.1 ::1
-    creates: '{{vaultwarden_path}}/ssl/localhost.pem'
+    creates: '{{podman.paths.vaultwarden_mount}}/ssl/localhost.pem'
 
 - name: Run Vaultwarden container
   containers.podman.podman_container:
@@ -39,8 +39,8 @@
     ports:
       - '127.0.0.1:{{hport}}:80'
     volumes:
-      - '{{vaultwarden_path}}/data/:/data'
-      - '{{vaultwarden_path}}/ssl:/ssl:Z'
+      - '{{podman.paths.vaultwarden_mount}}/data/:/data'
+      - '{{podman.paths.vaultwarden_mount}}/ssl:/ssl:Z'
     env:
       DOMAIN: 'https://proxpxd.vaultwarden.pl'
       ROCKET_TLS: '{certs="/ssl/localhost.pem",key="/ssl/localhost-key.pem"}'

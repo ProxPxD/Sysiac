@@ -1,2 +1,1 @@
-vaultwarden_path: '{{podman.paths.mounts}}/vaultwarden'
-hport: '{{podman.apps.vaultwarden.containers.server.hport}}'
+hport: '7000'
