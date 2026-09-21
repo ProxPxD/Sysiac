@@ -1,5 +1,5 @@
 username: ProxPxD
-email: piotr10tutek@poczta.onet.pl
+email: '{{vault_email}}'
 
 linux_user: '{{username | lower}}'
 user_path: '/home/{{linux_user}}'
