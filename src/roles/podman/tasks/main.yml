@@ -11,7 +11,7 @@
       - firewalld
 
 - name: Set Podman Envs
-  import_tasks: ../tasks/add-fish-conf.yml
+  include_tasks: ../tasks/add-fish-conf.yml
   vars:
     file_s: podman
     content: |

@@ -25,6 +25,6 @@
     directory_mode: '0755'
 
 - name: Set Fcitx Envs
-  import_tasks: ../tasks/add-fish-conf.yml
+  include_tasks: ../tasks/add-fish-conf.yml
   vars:
     file_s: fcitx
