@@ -5,6 +5,7 @@
       - podman
       - docker-compose
       - podman-dnsname
+      - podlet-bin
       - slirp4netns
       - crun
       - firewalld
