@@ -1,4 +1,4 @@
-abbr -a --position anywhere -- fdir '$__fish_config_dir/'
+abbr -a --position anywhere -- fdir '$__fish_config_dir'
 abbr -a --position anywhere -- fconf '$__fish_config_dir/config.fish'
 abbr -a -- zfdir 'z $__fish_config_dir/'
 abbr -a -- vconf 'nvim $__fish_config_dir/config.fish'
