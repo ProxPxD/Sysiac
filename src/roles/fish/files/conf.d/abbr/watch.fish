@@ -18,3 +18,7 @@ abbr -a -- hwls  'hwatch -ctn1 -p lsd'
 abbr -a -- wlsd  'hwatch -ctn1 -p lsd'
 abbr -a -- hwlsd 'hwatch -ctn1 -p lsd'
 abbr -a -- hlsd  'hwatch -ctn1 -p lsd'
+## bat
+abbr -a -- wb    'hwatch -ctn1 -p bat'
+abbr -a -- hb    'hwatch -ctn1 -p bat'
+abbr -a -- hwb   'hwatch -ctn1 -p bat'
