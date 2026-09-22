@@ -13,5 +13,6 @@ abbr -a -- gs     'git switch'
 abbr -a -- gst    'git switch -t'
 abbr -a -- gu     'git push'
 abbr -a -- gd     'git pull'
+abbr -a -- gdu    'git pull; git push'
 ## specific
 abbr -a -- gabbr  "z Sysiac; git commit -am 'abbr'; git push; ansible-playbook -K src/playbooks/workstation.yml -t confd; exec fish"
