@@ -1,10 +1,20 @@
 ## general
 abbr -a -- w1    'hwatch -ctn1 -p'
+abbr -a -- h     'hwatch -ctn1 -p'
+abbr -a -- h1    'hwatch -ctn1 -p'
+abbr -a -- hw    'hwatch -ctn1 -p'
+abbr -a -- hw1   'hwatch -ctn1 -p'
 ## podman
 abbr -a -- wpps  'hwatch -ctn1 -p podman ps -a'
 abbr -a -- wp    'hwatch -ctn1 -p podman ps -a'
 abbr -a -- wpl   'hwatch -ctn1 -p podman logs'
 ## lsd
 abbr -a -- wl    'hwatch -ctn1 -p lsd'
+abbr -a -- hl    'hwatch -ctn1 -p lsd'
+abbr -a -- hwl   'hwatch -ctn1 -p lsd'
 abbr -a -- wls   'hwatch -ctn1 -p lsd'
+abbr -a -- hls   'hwatch -ctn1 -p lsd'
+abbr -a -- hwls  'hwatch -ctn1 -p lsd'
 abbr -a -- wlsd  'hwatch -ctn1 -p lsd'
+abbr -a -- hwlsd 'hwatch -ctn1 -p lsd'
+abbr -a -- hlsd  'hwatch -ctn1 -p lsd'
