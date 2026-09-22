@@ -1,5 +1,5 @@
 ## general
-abbr -a -- w1    'hwatch -ctn 1 -p'
+abbr -a -- w1    'hwatch -ctn1 -p'
 ## podman
 abbr -a -- wpps  'hwatch -ctn1 -p podman ps -a'
 abbr -a -- wp    'hwatch -ctn1 -p podman ps -a'
