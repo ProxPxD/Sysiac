@@ -23,14 +23,17 @@ podman:
   apps:
     vaultwarden:
       services:
-        server:
+        vaultwarden:
           image: vaultwarden/server:latest
           container_name: vaultwarden
           ports: [127.0.0.1:7000:80]
           restart: unless-stopped
           volumes:
-            - '{{paths.vaultwarden_mount}}/data/:/data'
-            - '{{paths.vaultwarden_mount}}/ssl:/ssl:Z'
+            - '{{all_paths.vaultwarden_mount}}/data/:/data'
+            - '{{all_paths.vaultwarden_mount}}/ssl:/ssl:Z'
           environment:
             DOMAIN: 'https://proxpxd.vaultwarden.pl'
             ROCKET_TLS: '{certs="/ssl/localhost.pem",key="/ssl/localhost-key.pem"}'
+          labels:
+            app: vaultwarden
+            role: app

@@ -31,16 +31,21 @@
     creates: '{{podman.paths.vaultwarden_mount}}/ssl/localhost.pem'
 
 - name: Run Vaultwarden container
-  containers.podman.podman_container:
-    name: vaultwarden
-    image: vaultwarden/server:latest
-    state: started
-    restart_policy: unless-stopped
-    ports:
-      - '127.0.0.1:{{hport}}:80'
-    volumes:
-      - '{{podman.paths.vaultwarden_mount}}/data/:/data'
-      - '{{podman.paths.vaultwarden_mount}}/ssl:/ssl:Z'
-    env:
-      DOMAIN: 'https://proxpxd.vaultwarden.pl'
-      ROCKET_TLS: '{certs="/ssl/localhost.pem",key="/ssl/localhost-key.pem"}'
+  include_tasks: ../tasks/establish-podman-app.yml
+  vars:
+    app_name: vaultwarden
+
+# - name: Run Vaultwarden container
+#   containers.podman.podman_container:
+#     name: vaultwarden
+#     image: vaultwarden/server:latest
+#     state: started
+#     restart_policy: unless-stopped
+#     ports:
+#       - '127.0.0.1:{{hport}}:80'
+#     volumes:
+#       - '{{podman.paths.vaultwarden_mount}}/data/:/data'
+#       - '{{podman.paths.vaultwarden_mount}}/ssl:/ssl:Z'
+#     env:
+#       DOMAIN: 'https://proxpxd.vaultwarden.pl'
+#       ROCKET_TLS: '{certs="/ssl/localhost.pem",key="/ssl/localhost-key.pem"}'

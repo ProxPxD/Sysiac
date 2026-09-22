@@ -5,7 +5,7 @@
       - podman
       - docker-compose
       - podman-dnsname
-      - podlet-bin
+      - podlet
       - slirp4netns
       - crun
       - firewalld
@@ -67,3 +67,8 @@
           file:
             path: '{{podman.paths.mounts}}/.namespace-owned'
             state: touch
+
+- name: Enable User Lingering
+  command:
+    cmd: loginctl enable-linger {{linux_user}}
+    creates: /var/lib/systemd/linger/{{linux_user}}
