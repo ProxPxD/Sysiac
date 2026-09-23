@@ -73,3 +73,9 @@
   command:
     cmd: loginctl enable-linger {{linux_user}}
     creates: /var/lib/systemd/linger/{{linux_user}}
+
+- name: Enable Restart Service
+  systemd:
+    name: podman-restart.service
+    enabled: true
+    scope: user

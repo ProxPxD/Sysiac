@@ -15,5 +15,5 @@
   ansible.builtin.command:
     cmd: podman compose -f up -d
     stdin: '{{podman.apps[app_name] | to_yaml}}'
-  register: composed_result
+  register: compose_result
   changed_when: "'Running' not in compose_result.stderr"
