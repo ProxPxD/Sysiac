@@ -3,6 +3,7 @@
   vars:
     package_s:
       - podman
+      - podman-compose
       - docker-compose
       - podman-dnsname
       - podlet

@@ -22,6 +22,9 @@ podman:
   paths: '{{all_paths}}'
   apps:
     vaultwarden:
+      networks:
+        common:
+          external: true
       services:
         vaultwarden:
           image: vaultwarden/server:latest
