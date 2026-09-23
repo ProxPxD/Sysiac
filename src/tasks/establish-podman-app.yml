@@ -13,40 +13,7 @@
 
 - name: Establish Podman App | Compose
   ansible.builtin.command:
-    cmd: podman compose -f - up -d
+    cmd: podman compose -f up -d
     stdin: '{{podman.apps[app_name] | to_yaml}}'
   register: composed_result
   changed_when: "'Running' not in compose_result.stderr"
-
-# - name: Establish Podman App | Generate Quadlet Files
-#   command:
-#     cmd: >-
-#       podlet
-#       --file {{app_quadlet_path}}
-#       --skip-services-check
-#       --overwrite
-#       compose -
-#     stdin: '{{podman.apps[app_name] | to_yaml}}'
-#   register: podlet_result
-#   changed_when: false
-
-# - name: Reload User Systemd
-#   systemd_service:
-#     scope: user
-#     daemon_reload: true
-#   become: true
-#   become_user: '{{linux_user}}'
-
-  # TODO: Make containerwise
-  # TODO: Consider shortening the command
-# - name: Remove Podman App
-#   containers.podman.podman_container:
-#     name: '{{app_name}}'
-#     state: absent
-#   changed_when: false
-
-# - name: Establish Podman App | Start App
-#   systemd_service:
-#     name: '{{app_name}}.service'
-#     scope: user
-#     state: started
