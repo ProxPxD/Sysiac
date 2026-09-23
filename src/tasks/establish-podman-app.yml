@@ -12,7 +12,7 @@
     mode: '0755'
 
 - name: Establish Podman App | Compose
-  ansible.builtin.command:
+  command:
     cmd: podman compose -f - up -d
     stdin: '{{podman.apps[app_name] | to_yaml}}'
   register: compose_result
