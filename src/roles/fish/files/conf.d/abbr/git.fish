@@ -16,4 +16,4 @@ abbr -a -- gd     'git pull'
 abbr -a -- gdu    'git pull; git push'
 abbr -a -- gud    'git pull; git push'
 ## specific
-abbr -a -- gabbr  "z Sysiac; git commit -am 'abbr'; git push; ansible-playbook -K src/playbooks/workstation.yml -t confd; exec fish"
+abbr -a -- gabbr  "z Sysiac; git commit -am 'abbr'; git push; ansible-playbook -K --vault-password-file ~/.config/ansible/vault_password src/playbooks/workstation.yml -t confd; exec fish"
