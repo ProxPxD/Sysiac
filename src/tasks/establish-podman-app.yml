@@ -1,16 +1,5 @@
 ---
 # app_name: App Name from podman role
-
-- name: Establish Podman App | Set Facts
-  set_fact:
-    app_quadlet_path: '{{podman.paths.containers_systemd}}/{{app_name}}'
-
-- name: Establish Podman App | Ensure Dir Exists
-  file:
-    path: '{{app_quadlet_path}}'
-    state: directory
-    mode: '0755'
-
 - name: Establish Podman App | Compose
   command:
     cmd: podman compose -f - up -d
