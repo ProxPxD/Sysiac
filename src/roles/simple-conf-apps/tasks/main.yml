@@ -23,6 +23,7 @@
       - yt-dlp-ejs
       - uv
       - timew
+      - grc
 
       - borg
       - pika-backup
