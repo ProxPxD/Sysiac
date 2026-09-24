@@ -1,0 +1,1 @@
+alias podman 'grc podman'
