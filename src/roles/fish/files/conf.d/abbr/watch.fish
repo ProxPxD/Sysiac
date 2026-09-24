@@ -6,8 +6,10 @@ abbr -a -- hw    'hwatch -ctn1 -p'
 abbr -a -- hw1   'hwatch -ctn1 -p'
 ## podman
 abbr -a -- wpps  'hwatch -ctn1 -p podman ps --format $PODMAN_FORMATTING -a'
+abbr -a -- hpps  'hwatch -ctn1 -p podman ps --format $PODMAN_FORMATTING -a'
 abbr -a -- hwpps 'hwatch -ctn1 -p podman ps --format $PODMAN_FORMATTING -a'
 abbr -a -- wp    'hwatch -ctn1 -p podman ps --format $PODMAN_FORMATTING -a'
+abbr -a -- hp    'hwatch -ctn1 -p podman ps --format $PODMAN_FORMATTING -a'
 abbr -a -- hwp   'hwatch -ctn1 -p podman ps --format $PODMAN_FORMATTING -a'
 abbr -a -- wpl   'hwatch -ctn1 -p podman logs'
 ## lsd
