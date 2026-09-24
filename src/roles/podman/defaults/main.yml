@@ -43,5 +43,9 @@ podman:
     n8n:
       services:
         n8n:
-          image: mcp/n8n:latest
+          image: n8n-python
+          build:
+            context: .
+            dockerfile: Containerfile
+
           container_name: n8n
