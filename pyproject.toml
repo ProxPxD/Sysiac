@@ -1,0 +1,2 @@
+[tool.ruff.lint.per-file-ignores]
+"roles/*/tasks/*.py" = ["INP001"]

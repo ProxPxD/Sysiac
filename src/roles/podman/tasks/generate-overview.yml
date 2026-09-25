@@ -2,37 +2,23 @@
   set_fact:
     port_mapping: ""
 
-- name: Extract Ports
+- name: Extract Overview
+  command: python3 '{{role_path}}/scripts/extract_overview.py'
   args:
-    stdin: '{{podman.apps | to_json}}'
-  shell: |
-    python3 -c "
-    import sys
-    import json
-
-    apps = json.load(sys.stdin)
-
-    ports_mapping = [
-        {app_name: [elem.split(':')[-2] if ':' in elem else elem
-            for service_name, service_conf in (app_conf or {}).get('services', {}).items()
-            for elem in service_conf.get('ports', [])
-          ]
-        } for app_name, app_conf in apps.items()
-    ]
-    ports_mapping = filter(lambda e: list(e.values())[-1], ports_mapping)
-    ports_mapping = sorted(ports_mapping, key=lambda e: list(e.values())[-1][0])
-
-    print(json.dumps(ports_mapping))
-    "
-  register: ports_mapping_result
+    stdin: '{{ podman.apps | to_json }}'
+  register: overview_result
   changed_when: false
 
-- name: Convert Python Result to Ansible list
+- name: Convert Overview Result to Ansible Variable
   set_fact:
-    ports_mapping: '{{ports_mapping_result.stdout | from_json}}'
+    overview: '{{overview_result.stdout | from_json}}'
 
-- name: Save YAML
+- name: Save Port Mapping
   copy:
-    content: '{{ports_mapping | to_yaml}}'
+    content: '{{overview.ports_mapping | to_yaml}}'
     dest: '{{system_path}}/podman_app_ports_mapping.yaml'
 
+- name: Save Suggested Next Ports
+  copy:
+    content: '{{overview.suggested_ports | to_nice_yaml}}'
+    dest: '{{system_path}}/suggested_ports.yaml'
