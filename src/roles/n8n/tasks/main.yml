@@ -1,0 +1,18 @@
+- name: Create Tmp Dir
+  tempfile:
+    state: directory
+    prefix: n8n_workdir-
+  register: n8n_workdir
+  changed_when: false
+
+- name: Render Containerfile
+  template:
+    src: Containerfile
+    dest: '{{n8n_workdir.path}}/Containerfile'
+  changed_when: false
+
+- name: Run Container
+  include_tasks: ../tasks/establish-podman-app.yml
+  vars:
+    app_name: n8n
+    workdir: '{{n8n_workdir.path}}'

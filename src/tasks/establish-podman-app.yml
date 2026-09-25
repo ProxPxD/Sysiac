@@ -1,8 +1,16 @@
 ---
 # app_name: App Name from podman role
+# workdir: Workdir
+- name: Establish Podman App | Tear Down
+  command:
+    cmd: 'podman compose -p {{app_name}} -f - down'
+    stdin: '{{podman.apps[app_name] | to_yaml}}'
+    chdir: '{{workdir | default(user_path)}}'
+
 - name: Establish Podman App | Compose
   command:
-    cmd: podman compose -f - up -d
+    cmd: 'podman compose -p {{app_name}} -f - up -d'
     stdin: '{{podman.apps[app_name] | to_yaml}}'
-  register: compose_result
-  changed_when: "'Running' not in compose_result.stderr"
+    chdir: '{{workdir | default(user_path)}}'
+  # register: compose_result
+  # changed_when: "'Running' not in compose_result.stderr"
