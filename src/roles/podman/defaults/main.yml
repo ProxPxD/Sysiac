@@ -6,6 +6,7 @@ base_paths:
 derivated_paths:
   containers_systemd: '{{containers_path}}/systemd'
   vaultwarden_mount: '{{base_paths.mounts}}/vaultwarden'
+  n8n_mount: '{{base_paths.mounts}}/n8n'
 all_paths: '{{base_paths | combine(derivated_paths)}}'
 
 ############################
@@ -44,8 +45,11 @@ podman:
       services:
         n8n:
           image: n8n-python
+          ports: []
           build:
             context: .
             dockerfile: Containerfile
-
           container_name: n8n
+        n8n-runner:
+          posts: []
+      # vault_n8n_runners_auth_token

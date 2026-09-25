@@ -79,3 +79,6 @@
     name: podman-restart.service
     enabled: true
     scope: user
+
+- name: Establish Port Mapping File
+  include_tasks: generate-overview.yml

@@ -30,7 +30,7 @@
         localhost 127.0.0.1 ::1
     creates: '{{podman.paths.vaultwarden_mount}}/ssl/localhost.pem'
 
-- name: Run Vaultwarden container
+- name: Run Container
   include_tasks: ../tasks/establish-podman-app.yml
   vars:
     app_name: vaultwarden
