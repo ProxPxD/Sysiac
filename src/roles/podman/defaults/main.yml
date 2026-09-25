@@ -53,7 +53,7 @@ podman:
             context: .
             dockerfile: Containerfile
           ports: [7010:5678]
-          restart: unless-stopped
+          restart: on-failure
           volumes:
             - n8n_data:/home/node/.n8n'
           extra_hosts:
@@ -79,7 +79,7 @@ podman:
           image: docker.io/n8nio/runners:latest
           container_name: n8n-runners
           ports: [7011:5679]
-          restart: unless-stopped
+          restart: on-failure
           extra_hosts:
             - "host.containers.internal:host-gateway"
           environment:
@@ -88,3 +88,4 @@ podman:
             N8N_RUNNERS_AUTO_SHUTDOWN_TIMEOUT: 15
           labels:
             app: n8n
+    ngrok:
