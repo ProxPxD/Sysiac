@@ -1,3 +1,4 @@
+# Paths
 base_paths:
   containers: '{{conf_path}}/containers'
   mounts: '/opt/podman'
@@ -6,6 +7,12 @@ derivated_paths:
   vaultwarden_mount: '{{base_paths.mounts}}/vaultwarden'
   n8n_mount: '{{base_paths.mounts}}/n8n'
 all_paths: '{{base_paths | combine(derivated_paths)}}'
+
+# Ports
+ports:
+  n8n:
+    main: 7010
+    runner: 7011
 
 ############################
 # Central Podman Structure #
@@ -37,8 +44,9 @@ podman:
             DOMAIN: 'https://proxpxd.vaultwarden.pl'
             ROCKET_TLS: '{certs="/ssl/localhost.pem",key="/ssl/localhost-key.pem"}'
           labels:
-            app: vaultwarden
-            role: app
+            - app=vaultwarden
+            - role=app
+            - vaultwarden
     n8n:
       networks:
         default:
@@ -52,7 +60,7 @@ podman:
           build:
             context: .
             dockerfile: Containerfile
-          ports: [7010:5678]
+          ports: ['{{ports.n8n.main}}:5678']
           restart: on-failure
           volumes:
             - n8n_data:/home/node/.n8n'
@@ -73,12 +81,13 @@ podman:
             N8N_VERSION_NOTIFICATIONS_ENABLED: "false"
             N8N_BLOCK_ENV_ACCESS: "false"
           labels:
-            app: n8n
-            role: app
+            - app=n8n
+            - n8n
+            - role=app
         n8n-runners:
           image: docker.io/n8nio/runners:latest
           container_name: n8n-runners
-          ports: [7011:5679]
+          ports: ['{{ports.n8n.runner}}:5679']
           restart: on-failure
           extra_hosts:
             - "host.containers.internal:host-gateway"
@@ -87,5 +96,19 @@ podman:
             N8N_RUNNERS_TASK_BROKER_URI: http://n8n:5679
             N8N_RUNNERS_AUTO_SHUTDOWN_TIMEOUT: 15
           labels:
-            app: n8n
-    ngrok:
+            - app=n8n
+            - n8n
+        ngrok:
+          image: ngrok/ngrok:latest
+          container_name: ngrok
+          network_mode: host
+          command:
+            - http
+            - '--url={{vault_ngrok_domain}}'
+            - '{{ports.n8n.main | string}}'
+          restart: on-failure
+          environment:
+            NGROK_AUTHTOKEN: '{{vault_ngrok_authtoken}}'
+          labels:
+            - net
+            - n8n
