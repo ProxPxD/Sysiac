@@ -14,7 +14,7 @@
 
     ports_mapping = [
         {app_name: [elem.split(':')[-2] if ':' in elem else elem
-            for service_name, service_conf in app_conf.get('services', {}).items()
+            for service_name, service_conf in (app_conf or {}).get('services', {}).items()
             for elem in service_conf.get('ports', [])
           ]
         } for app_name, app_conf in apps.items()
