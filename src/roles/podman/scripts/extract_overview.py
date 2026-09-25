@@ -31,7 +31,7 @@ def create_suggested_ports(apps: dict, result: dict) -> dict[str, str]:
             kind_to_app_nums.setdefault(port[0], []).append(port[1:-1])
     for kind, app_nums in kind_to_app_nums.items():
         unique_app_nums = set(map(int, app_nums))
-        kind_to_lowest[kind] = f'{next(i for i in count() if i not in unique_app_nums)+1:02d}'
+        kind_to_lowest[int(kind)] = f'{kind}{next(i for i in count() if i not in unique_app_nums)+1:02d}_'
     return kind_to_lowest
 
 def create_overview(apps: dict):
