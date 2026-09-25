@@ -1,0 +1,8 @@
+regexp=\b[Uu]p\b
+colours=green
+-
+regexp=\b[Ee]xited\b
+colours=red
+-
+regexp=\b[Ss]topping\b
+colours=yellow
