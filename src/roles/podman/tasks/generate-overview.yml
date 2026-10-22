@@ -5,7 +5,7 @@
 - name: Extract Overview
   command: python3 '{{role_path}}/scripts/extract_overview.py'
   args:
-    stdin: '{{ podman.apps | to_json }}'
+    stdin: '{{podman.apps | to_json}}'
   register: overview_result
   changed_when: false
 
