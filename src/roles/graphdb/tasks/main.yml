@@ -2,3 +2,11 @@
   include_tasks: ../tasks/establish-podman-app.yml
   vars:
     app_name: graphdb
+
+- name: Allow GraphDB through firewall
+  become: true
+  firewalld:
+    port: '{{ports.graphdb.main.h}}/tcp'
+    permanent: true
+    state: enabled
+    immediate: true
