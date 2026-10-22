@@ -6,13 +6,19 @@ derivated_paths:
   containers_systemd: '{{base_paths.containers}}/systemd'
   vaultwarden_mount: '{{base_paths.mounts}}/vaultwarden'
   n8n_mount: '{{base_paths.mounts}}/n8n'
+  graphdb_mount: '{{base_paths.mounts}}/graphdb'
+  graphdb_secret: '{{secrets_path}}/graphdb.lic'
 all_paths: '{{base_paths | combine(derivated_paths)}}'
 
 # Ports
 ports:
+  vaultwarden: 7000
   n8n:
     main: 7010
     runner: 7011
+  graphdb:
+    main: {h: 7020, c: 7200}
+    rpc: {h: 7021, c: 7300}
 
 ############################
 # Central Podman Structure #
@@ -35,7 +41,7 @@ podman:
         vaultwarden:
           image: vaultwarden/server:latest
           container_name: vaultwarden
-          ports: [127.0.0.1:7000:80]
+          ports: ['127.0.0.1:{{ports.vaultwarden}}:80']
           restart: unless-stopped
           volumes:
             - '{{all_paths.vaultwarden_mount}}/data/:/data'
@@ -112,3 +118,17 @@ podman:
           labels:
             - net
             - n8n
+    graphdb:
+      services:
+        graphdb:
+          image: ontotext/graphdb:11.1.2
+          container_name: graphdb
+          ports:
+            - '{{ports.graphdb.main.h}}:{{ports.graphdb.main.c}}'
+            - '{{ports.graphdb.rpc.h}}:{{ports.graphdb.rpc.c}}'
+          restart: 'no'
+          volumes:
+            - '{{all_paths.graphdb_mount}}:/opt/graphdb/home'
+            - '{{all_paths.graphdb_secret}}:/opt/graphdb/home/licenses/graphdb.lic'
+          environment:
+            GDB_HEAP_SIZE: 1G

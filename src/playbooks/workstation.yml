@@ -50,6 +50,8 @@
       tags: [vaultwarden]
     - role: n8n
       tags: [n8n]
+    - role: graphdb
+      tags: [graphdb]
     # ~Utilities
     - role: bluetooth
       tags: [bluetooth]

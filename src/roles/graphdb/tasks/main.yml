@@ -1,0 +1,4 @@
+- name: Establish GraphDB Container
+  include_tasks: ../tasks/establish-podman-app.yml
+  vars:
+    app_name: graphdb
