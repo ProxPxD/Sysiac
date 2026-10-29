@@ -22,6 +22,7 @@ abbr -a -- hwls  'hwatch -ctn1 -s \'fish -c\' -p lsd'
 abbr -a -- wlsd  'hwatch -ctn1 -s \'fish -c\' -p lsd'
 abbr -a -- hwlsd 'hwatch -ctn1 -s \'fish -c\' -p lsd'
 abbr -a -- hlsd  'hwatch -ctn1 -s \'fish -c\' -p lsd'
+abbr -a -- hlg   'hwatch -ctn1 -s \'fish -c\' -p \'lsd | grep\''
 ## bat
 abbr -a -- wb    'hwatch -ctn1 -s \'fish -c\' -p bat'
 abbr -a -- hb    'hwatch -ctn1 -s \'fish -c\' -p bat'
