@@ -1,2 +1,2 @@
-abbr -a -- mk  'mkdir'
-abbr -a -- mkp 'mkdir -p'
+abbr -a -- mk   'mkdir'
+abbr -a -- mkp  'mkdir -p'
