@@ -3,3 +3,4 @@ cp -r ~/Documents/Obsidian/ProxPxD/.obsidian ~/Programs/Sysiac/src/roles/obsidia
 cp ~/.config/kglobalshortcutsrc ~/Programs/Sysiac/src/roles/shortcuts/files
 cp -r ~/.config/fcitx5 ~/Programs/Sysiac/src/roles/fcitx/files/fcitx5/conf
 cp ~/.grc/* ~/Programs/Sysiac/src/roles/simple-conf-apps/files/grc/
+cp ~/.local/share/zoxide/db.zo ~/Programs/Sysiac/src/roles/zoxide/files/db.zo

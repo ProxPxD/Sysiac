@@ -9,6 +9,8 @@ secrets_path: '{{cyber_path}}/secrets'
 desktop_path: '{{user_path}}/Desktop'
 conf_path: '{{user_path}}/.config'
 system_path: '{{user_path}}/System'
+local_path: '{{user_path}}/.local'
+local_share_path: '{{local_path}}/share'
 
 git_username: '{{username}}'
 git_ssh_key: '{{user_path}}/.ssh/id_ed25519'
